@@ -1,4 +1,4 @@
-# 用 JavaScript 來認識矩陣
+# 用 JavaScript 來認識Matrix
 
 ---
 
@@ -36,7 +36,7 @@ npm install dolphin-node-core
 建立 index.js
 
 ```bash
-echo "const 矩陣 = require('dolphin-node-core')" > index.js
+echo "const matrix = require('dolphin-node-core')" > index.js
 ```
 
 後續的範例皆是修改 index.js
@@ -47,57 +47,57 @@ echo "const 矩陣 = require('dolphin-node-core')" > index.js
 node index.js
 ```
 
-## 建立矩陣
+## 建立Matrix
 
 首先引用套件：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core')
+const matrix = require('dolphin-node-core')
 ```
 
-接著建立一個 4x3 矩陣，其中 4 代表橫列數目（row），而 3 代表直行數目（column）：
+接著建立一個 4x3 matrix，其中 4 代表橫列數目（row），而 3 代表直行數目（column）：
 
 ```javascript
-const m = new 矩陣(4, 3)
+const m = new matrix(4, 3)
 console.log(m)
 ```
 
 完整程式如下：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core')
-const m = new 矩陣(4, 3)
+const matrix = require('dolphin-node-core')
+const m = new matrix(4, 3)
 console.log(m)
 ```
 
 輸出結果：
 
-> 矩陣(4) [ [ 0, 0, 0 ], [ 0, 0, 0 ], [ 0, 0, 0 ], [ 0, 0, 0 ] ]
+> matrix(4) [ [ 0, 0, 0 ], [ 0, 0, 0 ], [ 0, 0, 0 ], [ 0, 0, 0 ] ]
 
 ### 賦予初始值
 
-建立矩陣時可以在行列數目的後面加上預設值的參數，如果沒指定，預設值會是 0。如果要建立一個 4x4 的矩陣，裡面元素全部都是 12，可以這樣寫：
+建立Matrix時可以在行列數目的後面加上預設值的參數，如果沒指定，預設值會是 0。如果要建立一個 4x4 的Matrix，裡面元素全部都是 12，可以這樣寫：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣(4, 4, 12)
+const matrix = require('dolphin-node-core') 
+const m = new matrix(4, 4, 12)
 console.log(m)
 ```
 
 輸出結果：
 
-> 矩陣(4) [
+> matrix(4) [
 >   [ 12, 12, 12, 12 ],
 >   [ 12, 12, 12, 12 ],
 >   [ 12, 12, 12, 12 ],
 >   [ 12, 12, 12, 12 ]
 > ]
 
-建立矩陣時可以傳入多個陣列當作初始值，每一個陣列會被當作一個橫列（row）並把值寫入矩陣：
+建立Matrix時可以傳入多個陣列當作初始值，每一個陣列會被當作一個橫列（row）並把值寫入Matrix：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣(
+const matrix = require('dolphin-node-core') 
+const m = new matrix(
   								[2, 2, 3, 1], 
   								[4, 5, 6, 3], 
   								[7, 8, 3, 3], 
@@ -107,7 +107,7 @@ console.log(m)
 
 輸出結果：
 
-> 矩陣(4) [
+> matrix(4) [
 >   [ 2, 2, 3, 1 ],
 >   [ 4, 5, 6, 3 ],
 >   [ 7, 8, 3, 3 ],
@@ -117,8 +117,8 @@ console.log(m)
 如果傳入的陣列長度不等，缺少的元素會用 0 取代：
 
 ```Javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣(
+const matrix = require('dolphin-node-core') 
+const m = new matrix(
   								[2, 2],
                   [4, 5, 6, 3],
                  	[7], 
@@ -128,7 +128,7 @@ console.log(m)
 
 輸出結果：
 
-> 矩陣(4) [
+> matrix(4) [
 >   [ 2, 2, 0, 0 ],
 >   [ 4, 5, 6, 3 ],
 >   [ 7, 0, 0, 0 ],
@@ -137,13 +137,13 @@ console.log(m)
 
 ### 存取元素
 
-矩陣本身就是一個陣列，可以用陣列存取方式去取得元素：
+Matrix本身就是一個陣列，可以用陣列存取方式去取得元素：
 
 > 請注意：因為與陣列相容，因此元素編號是從 0 開始。
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([8, 0, 1], [0, 3, 5])
+const matrix = require('dolphin-node-core') 
+const m = new matrix([8, 0, 1], [0, 3, 5])
 ```
 
 以下的程式碼將改變 [0,0] 位置的元素：
@@ -154,11 +154,11 @@ m[0][0] = 3 // 原本是 8
 
 ### 維度
 
-矩陣的維度可以從 `橫列數`（rows） 和 `直行數`（columns）去取得：
+Matrix的維度可以從 `橫列數`（rows） 和 `直行數`（columns）去取得：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([8, 0, 1], [0, 3, 5])
+const matrix = require('dolphin-node-core') 
+const m = new matrix([8, 0, 1], [0, 3, 5])
 console.log(`橫列數:${m.橫列數}`)
 console.log(`直行數:${m.直行數}`)
 ```
@@ -173,8 +173,8 @@ console.log(`直行數:${m.直行數}`)
 橫列與直行的編號是從 0 開始：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-let m = new 矩陣([1, 2], [3, 4])
+const matrix = require('dolphin-node-core') 
+let m = new matrix([1, 2], [3, 4])
 console.log(m)
 for (let 橫列編號 = 0; 橫列編號 < m.橫列數; 橫列編號++) {
     console.log(m.橫列(橫列編號))
@@ -186,21 +186,21 @@ for (let 直行編號 = 0; 直行編號 < m.直行數; 直行編號++) {
 
 輸出結果：
 
-> 矩陣(2) [ [ 1, 2 ], [ 3, 4 ] ]
-> 向量(2) [ 1, 2 ]
-> 向量(2) [ 3, 4 ]
-> 向量(2) [ 1, 3 ]
-> 向量(2) [ 2, 4 ]
+> matrix(2) [ [ 1, 2 ], [ 3, 4 ] ]
+> vector(2) [ 1, 2 ]
+> vector(2) [ 3, 4 ]
+> vector(2) [ 1, 3 ]
+> vector(2) [ 2, 4 ]
 
 ## $A+B=B+A$
 
-矩陣的加法具有交換律：
+Matrix的加法具有交換律：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([1, 2],[3, 4])
-const b = new 矩陣([4, 5],[6, 7])
-console.log(a.加(b).相等(b.加(a)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([1, 2], [3, 4])
+const b = new matrix([4, 5], [6, 7])
+console.log(a.加(b).equals(b.加(a)))
 ```
 
 輸出結果：
@@ -212,10 +212,10 @@ console.log(a.加(b).相等(b.加(a)))
 減法不具有交換律，因此 $A - B$ 不等於 $B - A$：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([1, 2],[3, 4])
-const b = new 矩陣([4, 5],[6, 7])
-console.log(a.減(b).相等(b.減(a)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([1, 2], [3, 4])
+const b = new matrix([4, 5], [6, 7])
+console.log(a.減(b).equals(b.減(a)))
 ```
 
 輸出結果：
@@ -225,11 +225,11 @@ console.log(a.減(b).相等(b.減(a)))
 ## $A\left(B+C\right)=\left(A+B\right)+C$
 
 ```Javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([4, 1], [2, 7])
-const b = new 矩陣([6, 7], [8, 9])
-const c = new 矩陣([0, 4], [3, 59])
-console.log(a.加(b.加(c)).相等(a.加(b).加(c)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([4, 1], [2, 7])
+const b = new matrix([6, 7], [8, 9])
+const c = new matrix([0, 4], [3, 59])
+console.log(a.加(b.加(c)).equals(a.加(b).add(c)))
 ```
 
 輸出結果：
@@ -239,41 +239,40 @@ console.log(a.加(b.加(c)).相等(a.加(b).加(c)))
 ## 與純量相乘
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([4, 1], [2, 7])
+const matrix = require('dolphin-node-core') 
+const m = new matrix([4, 1], [2, 7])
 console.log(m.乘(3))
 ```
 
 輸出結果：
 
-> 矩陣(2) [ [ 12, 3 ], [ 6, 21 ] ]
+> matrix(2) [ [ 12, 3 ], [ 6, 21 ] ]
 
 ## $A \times (BC) = (AB) \times C$
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([1, 2], [3, 4])
-const b = new 矩陣([4, 5], [6, 7])
-const c = new 矩陣([8, 3], [9, 0])
-console.log(a.乘(b.乘(c)).相等(a.乘(b).乘(c)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([1, 2], [3, 4])
+const b = new matrix([4, 5], [6, 7])
+const c = new matrix([8, 3], [9, 0])
+console.log(a.乘(b.乘(c)).相等(a.乘(b).multiply(c)))
 ```
 
 輸出結果：
 
 > true
 
-## 矩陣相乘 $A_{m\times p}\times B_{p\times n}={(AB)}_{m\times n}$
-
+## Matrix相乘 $A_{m\times p}\times B_{p\times n}={(AB)}_{m\times n}$
 
 ```javascript
-let a = new 矩陣([1, 2], [3, 4], [5, 6])
-let b = new 矩陣([1, 2, 3, 4], [5, 6, 7, 8])
+let a = new matrix([1, 2], [3, 4], [5, 6])
+let b = new matrix([1, 2, 3, 4], [5, 6, 7, 8])
 console.log(a.乘(b))
 ```
 
 輸出結果：
 
-> 矩陣(3) [ [ 11, 14, 17, 20 ], [ 23, 30, 37, 44 ], [ 35, 46, 57, 68 ] ]
+> matrix(3) [ [ 11, 14, 17, 20 ], [ 23, 30, 37, 44 ], [ 35, 46, 57, 68 ] ]
 
 詳細計算步驟：
 
@@ -303,47 +302,47 @@ $$
 \end{flalign}
 $$
 
-## 單位矩陣
+## 單位Matrix
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-let m = 矩陣.單位矩陣(4)
+const matrix = require('dolphin-node-core') 
+let m = matrix.單位Matrix(4)
 console.log(m)
 ```
 
 輸出結果：
 
-> 矩陣(4) [
+> matrix(4) [
 >   [ 1, 0, 0, 0 ],
 >   [ 0, 1, 0, 0 ],
 >   [ 0, 0, 1, 0 ],
 >   [ 0, 0, 0, 1 ]
 > ]
 
-## 轉置矩陣
+## 轉置Matrix
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-let m = new 矩陣([1, 2, 3], [4, 5, 6], [7, 2, 9])
+const matrix = require('dolphin-node-core') 
+let m = new matrix([1, 2, 3], [4, 5, 6], [7, 2, 9])
 console.log(m.轉置())
 ```
 
 輸出結果：
 
-> 矩陣(3) [ [ 1, 4, 7 ], [ 2, 5, 2 ], [ 3, 6, 9 ] ]
+> matrix(3) [ [ 1, 4, 7 ], [ 2, 5, 2 ], [ 3, 6, 9 ] ]
 
 ### $det(M)=\left|\begin{matrix}M^T\\\end{matrix}\right|=\left|\begin{matrix}M\\\end{matrix}\right|$
 
-一個矩陣的行列式等於它的轉置矩陣的行列式：
+一個Matrix的行列式等於它的轉置Matrix的行列式：
 
 ```Javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([1, 2, 3], [4, 5, 6], [7, 2, 9])
-const 轉置矩陣的行列式 = m.轉置().行列式()
-const 矩陣的行列式 = m.行列式()
-console.log(轉置矩陣的行列式)
-console.log(矩陣的行列式)
-console.log(轉置矩陣的行列式 === 矩陣的行列式)
+const matrix = require('dolphin-node-core') 
+const m = new matrix([1, 2, 3], [4, 5, 6], [7, 2, 9])
+const 轉置Matrix的行列式 = m.轉置().行列式()
+const Matrix的行列式 = m.行列式()
+console.log(轉置Matrix的行列式)
+console.log(Matrix的行列式)
+console.log(轉置Matrix的行列式 === Matrix的行列式)
 ```
 
 輸出結果：
@@ -357,9 +356,9 @@ console.log(轉置矩陣的行列式 === 矩陣的行列式)
 轉置是自身逆運算：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([1, 2, 3], [4, 5, 6], [7, 9, 8])
-m.轉置().轉置().相等(m)
+const matrix = require('dolphin-node-core')
+const m = new matrix([1, 2, 3], [4, 5, 6], [7, 9, 8])
+m.轉置().transpose().equals(m)
 ```
 
 輸出結果：
@@ -368,13 +367,13 @@ m.轉置().轉置().相等(m)
 
 ### $(A+B)^T=A^T+B^T$
 
-轉置是從 $m \times n$ 矩陣的向量空間到所有 $n \times m$ 矩陣的向量空間的線性映射：
+轉置是從 $m \times n$ Matrix的向量空間到所有 $n \times m$ Matrix的向量空間的線性映射：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const A = new 矩陣([1, 2, 3], [4, 5, 6], [7, 9, 8])
-const B = new 矩陣([3, 2, 1], [9, 1, 2], [5, 0, 3])
-console.log(A.加(B).轉置().相等(A.轉置().加(B.轉置())))
+const matrix = require('dolphin-node-core')
+const A = new matrix([1, 2, 3], [4, 5, 6], [7, 9, 8])
+const B = new matrix([3, 2, 1], [9, 1, 2], [5, 0, 3])
+console.log(A.加(B).transpose().equals(A.轉置().加(B.轉置())))
 ```
 
 輸出結果：
@@ -387,8 +386,8 @@ console.log(A.加(B).轉置().相等(A.轉置().加(B.轉置())))
 純量的轉置是同樣的純量。
 
 ```javascript
-const m = new 矩陣([1, 2, 3], [4, 5, 6], [7, 9, 8])
-console.log(m.乘(3).轉置().相等(m.轉置().乘(3)))
+const m = new matrix([1, 2, 3], [4, 5, 6], [7, 9, 8])
+console.log(m.乘(3).transpose().equals(m.轉置().乘(3)))
 ```
 
 輸出結果：
@@ -398,10 +397,10 @@ console.log(m.乘(3).轉置().相等(m.轉置().乘(3)))
 ### $\left(A\times B\right)^T=B^T\times A^T$
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const A = new 矩陣([1, 2, 3], [4, 5, 6], [7, 9, 8])
-const B = new 矩陣([3, 2, 1], [9, 1, 2], [5, 0, 3])
-console.log(A.乘(B).轉置().相等(B.轉置().乘(A.轉置())))
+const matrix = require('dolphin-node-core')
+const A = new matrix([1, 2, 3], [4, 5, 6], [7, 9, 8])
+const B = new matrix([3, 2, 1], [9, 1, 2], [5, 0, 3])
+console.log(A.乘(B).transpose().equals(B.轉置().乘(A.轉置())))
 ```
 
 輸出結果：
@@ -410,11 +409,11 @@ console.log(A.乘(B).轉置().相等(B.轉置().乘(A.轉置())))
 
 ### $A^T=-A$
 
-反對稱矩陣（或稱斜對稱矩陣）是一個方形矩陣，其轉置矩陣和自身的加法反元素相等。
+反對稱Matrix（或稱斜對稱Matrix）是一個方形Matrix，其轉置Matrix和自身的加法反元素相等。
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([0, 2, -1], [-2, 0, -4], [1, 4, 0])
+const matrix = require('dolphin-node-core') 
+const m = new matrix([0, 2, -1], [-2, 0, -4], [1, 4, 0])
 console.log(m.轉置().相等(m.乘(-1)))
 ```
 
@@ -424,11 +423,11 @@ console.log(m.轉置().相等(m.乘(-1)))
 
 ### $A^T=A$
 
-對稱矩陣是一個方形矩陣，其轉置矩陣和自身相等。
+對稱Matrix是一個方形Matrix，其轉置Matrix和自身相等。
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣([1, 2, 3], [2, 4, -5], [3, -5, 6])
+const matrix = require('dolphin-node-core') 
+const m = new matrix([1, 2, 3], [2, 4, -5], [3, -5, 6])
 console.log(m.轉置().相等(m))
 ```
 
@@ -441,10 +440,10 @@ console.log(m.轉置().相等(m))
 ### $A^2 B^2=A(AB)B$
 
 ```Javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([4, 0], [-3, 7])
-const b = new 矩陣([1, 3], [6, -6])
-console.log(a.冪(2).乘(b.冪(2)).相等(a.乘(a.乘(b)).乘(b)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([4, 0], [-3, 7])
+const b = new matrix([1, 3], [6, -6])
+console.log(a.冪(2).multiply(b.冪(2)).equals(a.乘(a.乘(b)).multiply(b)))
 ```
 
 輸出結果：
@@ -454,9 +453,9 @@ console.log(a.冪(2).乘(b.冪(2)).相等(a.乘(a.乘(b)).乘(b)))
 ### $A^r A^s = A^{(r+s)}$
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([4, 0], [-3, 7])
-console.log(a.冪(2).乘(a.冪(3)).相等(a.冪(2 + 3)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([4, 0], [-3, 7])
+console.log(a.冪(2).multiply(a.冪(3)).equals(a.冪(2 + 3)))
 ```
 
 輸出結果：
@@ -466,20 +465,20 @@ console.log(a.冪(2).乘(a.冪(3)).相等(a.冪(2 + 3)))
 ### $\left(A^r\right)^s=A^{r \times s}$
 
 ```Javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣([2, 1], [3, 7])
-console.log(a.冪(2).冪(3).相等(a.冪(2 * 3)))
+const matrix = require('dolphin-node-core')
+const a = new matrix([2, 1], [3, 7])
+console.log(a.冪(2).power(3).equals(a.冪(2 * 3)))
 ```
 
 輸出結果：
 
 > true
 
-## 逆矩陣 $A^{-1}$
+## 逆Matrix $A^{-1}$
 
-逆矩陣（inverse matrix），又稱乘法反方陣、反矩陣。在線性代數中，給定一個 $n$ 階方陣，若存在一 $n$ 階方陣 $B$，使得 $AB=BA=I_n$ ，其中 $I_n$ 為 $n$ 階單位矩陣，則稱 $A$ 是可逆的，且 $B$ 是 $A$ 的逆矩陣，記作 $A^{-1}$。 
+逆Matrix（inverse matrix），又稱乘法反方陣、反Matrix。在線性代數中，給定一個 $n$ 階方陣，若存在一 $n$ 階方陣 $B$，使得 $AB=BA=I_n$ ，其中 $I_n$ 為 $n$ 階單位Matrix，則稱 $A$ 是可逆的，且 $B$ 是 $A$ 的逆Matrix，記作 $A^{-1}$。 
 
-以下列的矩陣為例，最右邊為逆矩陣的結果：
+以下列的Matrix為例，最右邊為逆Matrix的結果：
 $$
 \left(\begin{matrix}
 2 & 2 & 3 & 1 \\
@@ -503,13 +502,13 @@ $$
 $$
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣(
+const matrix = require('dolphin-node-core') 
+const m = new matrix(
   							 [2, 2, 3, 1], 
                  [4, 5, 6, 3], 
   							 [7, 8, 3, 3],
    							 [2, 2, 2, 0])
-const r = m.逆矩陣()
+const r = m.逆Matrix()
 console.log(r.文字表示())
 ```
 
@@ -524,16 +523,16 @@ console.log(r.文字表示())
 
 ### $A \times A^{-1} = I$
 
-如果把矩陣乘以逆矩陣應等於單位矩陣：
+如果把Matrix乘以逆Matrix應等於單位Matrix：
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣(
+const matrix = require('dolphin-node-core') 
+const m = new matrix(
     [2, 2, 3, 1],
     [4, 5, 6, 3],
     [7, 8, 3, 3],
     [2, 2, 2, 0])
-const r = m.逆矩陣()
+const r = m.逆Matrix()
 console.log(m.乘(r).文字表示())
 ```
 
@@ -549,14 +548,14 @@ console.log(m.乘(r).文字表示())
 ### $(A^{T})^{-1} = (A^{-1})T$
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const m = new 矩陣(
+const matrix = require('dolphin-node-core') 
+const m = new matrix(
                   [2, 2, 3, 1],
                   [4, 5, 6, 3],
                   [7, 8, 3, 3],
                   [2, 2, 2, 0])
-const r1 = m.轉置().逆矩陣()
-const r2 = m.逆矩陣().轉置()
+const r1 = m.轉置().逆Matrix()
+const r2 = m.逆Matrix().轉置()
 console.log(r1.文字表示())
 console.log(r2.文字表示())
 ```
@@ -580,12 +579,12 @@ console.log(r2.文字表示())
 ### $det(A^{-1}) = {{1} \over {det(A)}}$
 
 ```javascript
-const m = new 矩陣(
-                  [2, 2, 3, 1],
-                  [4, 5, 6, 3],
-                  [7, 8, 3, 3],
-                  [2, 2, 2, 0])
-const d1 = m.逆矩陣().行列式()
+const m = new matrix(
+    [2, 2, 3, 1],
+    [4, 5, 6, 3],
+    [7, 8, 3, 3],
+    [2, 2, 2, 0])
+const d1 = m.逆Matrix().行列式()
 const d2 = 1 / m.行列式()
 console.log('d1=', d1)
 console.log('d2=', d2)
@@ -599,19 +598,19 @@ console.log('d2=', d2)
 ### $(AB)^{-1} = B^{-1} A^{-1}$
 
 ```javascript
-const 矩陣 = require('dolphin-node-core') 
-const a = new 矩陣(
+const matrix = require('dolphin-node-core') 
+const a = new matrix(
     [2, 2, 3, 1],
     [4, 5, 6, 3],
     [7, 8, 3, 3],
     [2, 2, 2, 0])
-const b = new 矩陣(
+const b = new matrix(
     [3, 2, 3, 0],
     [4, 5, 6, 3],
     [4, 1, 3, 3],
     [2, 6, 9, 0])
-const r1 = a.乘(b).逆矩陣()
-const r2 = b.逆矩陣().乘(a.逆矩陣())
+const r1 = a.乘(b).逆Matrix()
+const r2 = b.逆Matrix().乘(a.逆Matrix())
 console.log('r1=', r1.文字表示())
 console.log('r2=', r2.文字表示())
 ```

@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Source: Vector.js | Source: Vector.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="">
+
+            <img src="img/toast-ui.png" width="100%" height="100%">
+
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Source: Vector.js</a></h1>
+
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-Type.html">Type</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:Type_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-Type.html#~TOLERANCE">TOLERANCE</a></li><li><a href="module-Type.html#~TYPE_NAME">TYPE_NAME</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-Type.html#~equals">equals</a></li><li><a href="module-Type.html#~getType">getType</a></li><li><a href="module-Type.html#~isArray">isArray</a></li><li><a href="module-Type.html#~isBoolean">isBoolean</a></li><li><a href="module-Type.html#~isDate">isDate</a></li><li><a href="module-Type.html#~isFunction">isFunction</a></li><li><a href="module-Type.html#~isNotArray">isNotArray</a></li><li><a href="module-Type.html#~isNotBoolean">isNotBoolean</a></li><li><a href="module-Type.html#~isNotDate">isNotDate</a></li><li><a href="module-Type.html#~isNotFunction">isNotFunction</a></li><li><a href="module-Type.html#~isNotNull">isNotNull</a></li><li><a href="module-Type.html#~isNotNumber">isNotNumber</a></li><li><a href="module-Type.html#~isNotObject">isNotObject</a></li><li><a href="module-Type.html#~isNotRegex">isNotRegex</a></li><li><a href="module-Type.html#~isNotString">isNotString</a></li><li><a href="module-Type.html#~isNull">isNull</a></li><li><a href="module-Type.html#~isNumber">isNumber</a></li><li><a href="module-Type.html#~isObject">isObject</a></li><li><a href="module-Type.html#~isRegex">isRegex</a></li><li><a href="module-Type.html#~isSameType">isSameType</a></li><li><a href="module-Type.html#~isSmallValue">isSmallValue</a></li><li><a href="module-Type.html#~isString">isString</a></li><li><a href="module-Type.html#~isUndefined">isUndefined</a></li><li><a href="module-Type.html#~removeTailingZero">removeTailingZero</a></li></ul></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596.html">例外</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外_sub"></div></li><li><a href="module-%25E5%25AD%2597%25E4%25B8%25B2%25E5%25B7%25A5%25E5%2585%25B7.html">字串工具</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:字串工具_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-%2525E5%2525AD%252597%2525E4%2525B8%2525B2%2525E5%2525B7%2525A5%2525E5%252585%2525B7.html#~移除空白字元">移除空白字元</a></li><li><a href="module-%2525E5%2525AD%252597%2525E4%2525B8%2525B2%2525E5%2525B7%2525A5%2525E5%252585%2525B7.html#~repeat">repeat</a></li><li><a href="module-%2525E5%2525AD%252597%2525E4%2525B8%2525B2%2525E5%2525B7%2525A5%2525E5%252585%2525B7.html#~%25E8%25A9%259E%25E5%25BD%2599%25E6%2598%25AF%25E5%2590%25A6%25E5%2590%258C%25E6%2599%2582%25E5%2587%25BA%25E7%258F%25BE">findAll</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="位元陣列.html">位元陣列</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="位元陣列_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="位元陣列.html#count">count</a></li><li><a href="位元陣列.html#pageCount">pageCount</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="位元陣列.html#and">and</a></li><li><a href="位元陣列.html#clone">clone</a></li><li><a href="位元陣列.html#get">get</a></li><li><a href="位元陣列.html#not">not</a></li><li><a href="位元陣列.html#or">or</a></li><li><a href="位元陣列.html#parse">parse</a></li><li><a href="位元陣列.html#set">set</a></li><li><a href="位元陣列.html#setAll">setAll</a></li><li><a href="位元陣列.html#toString">toString</a></li><li><a href="位元陣列.html#xor">xor</a></li></ul></div></li><li><a href="Matrix.html">Matrix</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Matrix_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Matrix.html#columns">columns</a></li><li><a href="Matrix.html#rows">rows</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Matrix.html#.createIdentityMatrix">createIdentityMatrix</a></li><li><a href="Matrix.html#add">add</a></li><li><a href="Matrix.html#clear">clear</a></li><li><a href="Matrix.html#column">column</a></li><li><a href="Matrix.html#copyRange">copyRange</a></li><li><a href="Matrix.html#equals">equals</a></li><li><a href="Matrix.html#expand">expand</a></li><li><a href="Matrix.html#fill">fill</a></li><li><a href="Matrix.html#forEachColumn">forEachColumn</a></li><li><a href="Matrix.html#forEachRow">forEachRow</a></li><li><a href="Matrix.html#inverse">inverse</a></li><li><a href="Matrix.html#isAntisymmetric">isAntisymmetric</a></li><li><a href="Matrix.html#isSymmetric">isSymmetric</a></li><li><a href="Matrix.html#multiply">multiply</a></li><li><a href="Matrix.html#power">power</a></li><li><a href="Matrix.html#row">row</a></li><li><a href="Matrix.html#setColumn">setColumn</a></li><li><a href="Matrix.html#setDimension">setDimension</a></li><li><a href="Matrix.html#setRow">setRow</a></li><li><a href="Matrix.html#subtract">subtract</a></li><li><a href="Matrix.html#sum">sum</a></li><li><a href="Matrix.html#transpose">transpose</a></li></ul></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-索引超出範圍錯誤.html">索引超出範圍錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~索引超出範圍錯誤_sub"></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-二進位字串內容錯誤.html">二進位字串內容錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~二進位字串內容錯誤_sub"></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-參數錯誤.html">參數錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~參數錯誤_sub"></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-型別錯誤.html">型別錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~型別錯誤_sub"></div></li><li><a href="TextFile.html">TextFile</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TextFile_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="TextFile.html#fileName">fileName</a></li><li><a href="TextFile.html#mode">mode</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="TextFile.html#append">append</a></li><li><a href="TextFile.html#readAll">readAll</a></li><li><a href="TextFile.html#rewrite">rewrite</a></li><li><a href="TextFile.html#write">write</a></li><li><a href="TextFile.html#writeLine">writeLine</a></li></ul></div></li><li><a href="Vector.html">Vector</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vector_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vector.html#add">add</a></li><li><a href="Vector.html#append">append</a></li><li><a href="Vector.html#clone">clone</a></li><li><a href="Vector.html#cross">cross</a></li><li><a href="Vector.html#dot">dot</a></li><li><a href="Vector.html#equals">equals</a></li><li><a href="Vector.html#findPairs">findPairs</a></li><li><a href="Vector.html#firstElementLargerThan">firstElementLargerThan</a></li><li><a href="Vector.html#firstElementLessThan">firstElementLessThan</a></li><li><a href="Vector.html#isZero">isZero</a></li><li><a href="Vector.html#iterate">iterate</a></li><li><a href="Vector.html#max">max</a></li><li><a href="Vector.html#min">min</a></li><li><a href="Vector.html#multiply">multiply</a></li><li><a href="Vector.html#sum">sum</a></li><li><a href="Vector.html#updateAll">updateAll</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3><a href="global.html">Global</a></h3></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+
+
+
+
+
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const Type = require('./Type')
+const {
+    型別錯誤,
+    參數錯誤,
+} = require('./Exceptions')
+const 位元陣列 = require('./位元陣列')
+const 錯誤訊息 = require('./ErrorMesages')
+
+/**
+ * callback
+ * @callback VectorCallback
+ * @param {*} value
+ * @param {number} index
+ */
+
+/**
+ * @class
+ * @classdesc Vector。
+ */
+class Vector extends Array {
+
+    /**
+     * @constructor
+     * @param {array|number} initValues
+     * @example
+     * const v1 = new Vector(4) // [0, 0, 0, 0]
+     * const v2 = new Vector([1, 2, 3]) // [1, 2, 3]
+     * const v3 = new Vector([1, 2, 3], 4) // [1, 2, 3, 4]
+     * const v4 = new Vector([1, 2, 3], 4, [5, 6, 7]) // [1, 2, 3, 4, 5, 6, 7]
+     * const v5 = new Vector() // []
+     *
+     */
+    constructor (initValues) {
+        let args = Array.from(arguments)
+        if (args.length === 1 &amp;&amp; Type.isNumber(args[0])) {
+            super(args[0])
+            this.fill(0)
+            return
+        }
+        let flattenArgs = args.reduce((a, b) => {
+            if (Type.isArray(b)) {
+                return [...a, ...b]
+            } else {
+                return [...a, b]
+            }
+        }, [])
+        super(...flattenArgs)
+    }
+
+    /**
+     * 確保 callback 的型別是函式。如果 callback 不是 null 或是 undefined，其型別必須是函式，否則會拋出例外。
+     * @param callback
+     * @throws {型別錯誤}
+     */
+    #ensureCallbackIsFunction (callback) {
+        if (callback &amp;&amp; Type.isNotFunction(callback)) {
+            throw new 型別錯誤(錯誤訊息.回呼函式必須是函式)
+        }
+    }
+
+    /**
+     * 確保 excludedElements 的型別是 位元陣列。如果 excludedElements 不是 null 或是 undefined，其型別必須是 位元陣列，否則會拋出例外。
+     * @param excludedElements
+     * @throws {型別錯誤}
+     */
+    #ensureExcludedElementsIs位元陣列 (excludedElements) {
+        if (excludedElements &amp;&amp; !(excludedElements instanceof 位元陣列)) {
+            throw new 型別錯誤(錯誤訊息.Vector.參數excludedElements型別必須是位元陣列)
+        }
+    }
+
+    /**
+     * 尋找第一個符合條件的元素。
+     * @param {*} target
+     * @param {位元陣列} excludedElements 如果元素的索引在excludedElements中設為 true，便會被排除。
+     * @param {function} compareFunction 比較函式會在每一個有效的元素比較時被呼叫。
+     * 如果 target 和目前項目相同，回傳 true。
+     * 如果 target 和目前項目不相同，回傳 false。
+     * @returns {{index: number, value: null}|{index: number, value: *}}
+     */
+    #findTheFirstMatchingElement (target, excludedElements, compareFunction) {
+        this.#ensureExcludedElementsIs位元陣列(excludedElements)
+        this.#ensureCallbackIsFunction(compareFunction)
+        let position = 0
+        while (position &lt; this.length) {
+            if (excludedElements &amp;&amp; excludedElements.get(position)) {
+                position++
+                continue
+            }
+            let current = this[position]
+            if (compareFunction &amp;&amp; compareFunction(current, target)) {
+                return {
+                    index: position,
+                    value: current,
+                }
+            }
+            position++
+        }
+        return {
+            index: -1,
+            value: null,
+        }
+    }
+
+    /**
+     * 尋找最後一個符合條件的元素。
+     * @param {位元陣列} excludedElements 如果元素的索引在excludedElements中設為 true，便會被排除。
+     * @param {function} compareFunction 比較函式會在每一個有效的元素比較時被呼叫。
+     * @returns {{index: number, value: null}|{index: number, value: *}}
+     */
+    #findTheLastMatchingElement (excludedElements, compareFunction) {
+        this.#ensureExcludedElementsIs位元陣列(excludedElements)
+        let result = {
+            index: -1,
+            value: undefined,
+        }
+        if (this.length === 0) return result
+        result = {
+            index: 0,
+            value: this[0],
+        }
+        let index = 1
+        while (index &lt; this.length) {
+            if (excludedElements &amp;&amp; excludedElements.get(index)) {
+                index++
+                continue
+            }
+            let current = this[index]
+            if (compareFunction &amp;&amp; compareFunction(current, result.value)) {
+                result = {
+                    index: index,
+                    value: current,
+                }
+            }
+            index++
+        }
+        return result
+    }
+
+    /**
+     * 每一個元素與傳入的數值或向量相加。
+     * @param {number|Vector} 參數另一個向量的長度必須相同 數值或向量。
+     * @return {Vector} 回傳新的向量，向量本身的內容不會變動。
+     * @throws {參數錯誤} 如果
+     */
+    add (參數另一個向量的長度必須相同) {
+        if (參數另一個向量的長度必須相同 instanceof Vector) {
+            if (參數另一個向量的長度必須相同.length !== this.length) {
+                throw new 參數錯誤(錯誤訊息.Vector.參數另一個向量的長度必須相同)
+            }
+        } else if (Type.isNotNumber(參數另一個向量的長度必須相同)) {
+            throw new 型別錯誤(錯誤訊息.Vector.參數參數另一個向量的長度必須相同的型別必須是數值或向量)
+        }
+
+        let result = new Vector(this.length)
+        if (Type.isNumber(參數另一個向量的長度必須相同)) {
+            for (let i = 0; i &lt; this.length; i++) {
+                result[i] = this[i] + 參數另一個向量的長度必須相同
+            }
+        } else {
+            for (let i = 0; i &lt; this.length; i++) {
+                result[i] = this[i] + 參數另一個向量的長度必須相同[i]
+            }
+        }
+        return result
+    }
+
+    /**
+     * 附加元素。
+     * @param {array|number} element 要加入的元素可以是單一數值或是陣列。
+     * @return {Vector} 回傳新的向量，向量本身的內容不會變動。
+     */
+    append (element) {
+        let result = this.clone()
+        Array.from(arguments).forEach(x => {
+            if (Type.isArray(x)) {
+                x.forEach(y => result.push(y))
+            } else {
+                result.push(x)
+            }
+        })
+        return result
+    }
+
+    /**
+     * 複製成新向量。
+     * @return {Vector} 回傳新的向量，向量本身的內容不會變動。
+     */
+    clone () {
+        return new Vector(this)
+    }
+
+    /**
+     * 外積。
+     * @param {Vector} 參數另一個向量的長度必須相同
+     * @return {Vector} 傳回新向量。
+     * @throws {Error} 如果長度不是 3，便會拋出此例外。
+     * @example
+     * const v1 = new Vector([3, 4, 1])
+     * const v2 = new Vector([3, 7, 5])
+     * const v3 = v1.cross(v2) // [13, -12, 9]
+     */
+    cross (參數另一個向量的長度必須相同) {
+        if (this.length !== 3 || 參數另一個向量的長度必須相同.length !== 3) {
+            throw new Error(錯誤訊息.Vector.外積僅能對三維向量做運算)
+        }
+        return new Vector(this[1] * 參數另一個向量的長度必須相同[2] - this[2] * 參數另一個向量的長度必須相同[1],
+            this[2] * 參數另一個向量的長度必須相同[0] - this[0] * 參數另一個向量的長度必須相同[2],
+            this[0] * 參數另一個向量的長度必須相同[1] - this[1] * 參數另一個向量的長度必須相同[0])
+    }
+
+    /**
+     * 內積
+     * @param {Vector} 參數另一個向量的長度必須相同
+     * @return {number}
+     * @example
+     * const v1 = new Vector([3, 4, 1])
+     * const v2 = new Vector([3, 7, 5])
+     * const product = v1.dot(v2) // 42
+     */
+    dot (參數另一個向量的長度必須相同) {
+        return 參數另一個向量的長度必須相同.reduce((acc, curr, index) => acc + curr * this[index], 0)
+    }
+
+    /**
+     * 與參數另一個向量的長度必須相同是否相等。當兩個數值差異小於 0.00000001 時，會被認為是相等。
+     * @param {Vector} 參數另一個向量的長度必須相同
+     * @return {boolean}
+     * @throws {型別錯誤} 如果 參數另一個向量的長度必須相同 不是向量會拋出此例外。
+     */
+    equals (參數另一個向量的長度必須相同) {
+        if (!(參數另一個向量的長度必須相同 instanceof Vector)) {
+            throw new 型別錯誤(錯誤訊息.Vector.參數參數另一個向量的長度必須相同的型別必須是向量)
+        }
+        if (參數另一個向量的長度必須相同.length !== this.length) return false
+        for (let i = 0; i &lt; this.length; i++) {
+            if (!Type.equals(this[i], 參數另一個向量的長度必須相同[i])) return false
+        }
+        return true
+    }
+
+    /**
+     * 尋找是否有相鄰的兩個數字。
+     * @param {number} a
+     * @param {number} b
+     * @return {boolean}
+     */
+    findPairs (a, b) {
+        if (this.length &lt;= 1) return false
+        const indexOfFirstNumber = this.indexOf(a)
+        if (indexOfFirstNumber >= this.length - 1) return false
+        return Type.equals(this[indexOfFirstNumber + 1], b)
+    }
+
+    /**
+     * 第一個大於 target 的元素。
+     * @param {number} target
+     * @param {位元陣列} [excludedElements]
+     * @return {{value: number, index: number}|{value: null, index: number}}
+     * @throws {型別錯誤} 如果傳入的參數不是位元陣列會拋出此例外。
+     * @example
+     *  const v1 = new Vector([1, 2, 3, 4])
+     *  console.log(v1.firstElementLargerThan(2)) // {index: 2,value: 3})
+     *
+     *  const v2 = new Vector([1, 2, 3, 4])
+     *  const excluded = new 位元陣列('0010')
+     *  console.log(v2.firstElementLargerThan(2, excluded)) // {index: 2,value: 3})
+     */
+    firstElementLargerThan (target, excludedElements) {
+        return this.#findTheFirstMatchingElement(target, excludedElements,
+            (current, 參數另一個向量的長度必須相同) => current > 參數另一個向量的長度必須相同)
+    }
+
+    /**
+     * 第一個小於數值的元素。
+     * @param {number} value
+     * @param {位元陣列} [excludedElements]
+     * @return {{value: number, index: number}|{value: null, index: number}}
+     * @throws {型別錯誤} 如果傳入的參數不是位元陣列會拋出此例外。
+     */
+    firstElementLessThan (value, excludedElements) {
+        return this.#findTheFirstMatchingElement(value, excludedElements,
+            (current, 參數另一個向量的長度必須相同) => current &lt; 參數另一個向量的長度必須相同)
+    }
+
+    /**
+     * 是否為非零向量。
+     * @returns {boolean} 有一個以上的元素不為零，回傳 false。如果每一個元素都為 0，回傳 true。
+     */
+    isZero () {
+        // for 迴圈的速度比 filter 快 6 倍
+        for (let i = 0; i &lt; this.length; i++) {
+            if (this[i] !== 0) return false
+        }
+        return true
+    }
+
+    /**
+     * 遍歷每個元素，如果元素的索引在excludedElements中設為 true，便會被排除。
+     * @param {VectorCallback} callback
+     * @param {位元陣列} [excludedElements]
+     * @return {Vector} 向量本身
+     * @throws {型別錯誤} 如果excludedElements不是位元陣列會拋出此例外。
+     */
+    iterate (callback, excludedElements) {
+        if (callback &amp;&amp; Type.isNotFunction(callback)) {
+            throw new 型別錯誤(錯誤訊息.回呼函式必須是函式)
+        }
+        this.#ensureExcludedElementsIs位元陣列(excludedElements)
+        for (let i = 0; i &lt; this.length; i++) {
+            if (excludedElements &amp;&amp; excludedElements.get(i)) continue
+            if (callback) callback(this[i], i)
+        }
+        return this
+    }
+
+    /**
+     * 尋找最大值。
+     * @return {{value: number, index: number}}
+     * @param {位元陣列} excludedElements
+     */
+    max (excludedElements) {
+        return this.#findTheLastMatchingElement(excludedElements,
+            (current, result) => current > result)
+    }
+
+    /**
+     * 尋找最小值。
+     * @return {{value: number, index: number}}
+     * @param {位元陣列} excludedElements
+     */
+    min (excludedElements) {
+        return this.#findTheLastMatchingElement(excludedElements,
+            (current, result) => current &lt; result)
+    }
+
+    /**
+     * 每一個元素乘上傳入的數值。
+     * @param {number} value
+     * @return {Vector} 新向量。
+     * @throws {型別錯誤}
+     */
+    multiply (value) {
+        if (Type.isNotNumber(value)) {
+            throw new 型別錯誤(錯誤訊息.傳入的參數應為數值)
+        }
+        let result = new Vector(this.length)
+        for (let i = 0; i &lt; this.length; i++) {
+            result[i] = this[i] * value
+        }
+        return result
+    }
+
+    /**
+     * 所有的項目加總。
+     * @param {位元陣列} [excludedElements] excludedElements設為 true 的項目會被排除。
+     * @return {*}
+     * @throws {型別錯誤} 如果excludedElements不是位元陣列會拋出型別錯誤例外。
+     * @example
+     * const v1 = new Vector(["a", "b", "c"])
+     * console.log(v1.總和()) // abc
+     *
+     * const v2 = new Vector([1, 2, 3, 4])
+     * console.log(v2.總和()) // 10
+     *
+     * const v3 = new Vector([1, 2, 3, 4])
+     * const 排除項目 = new 位元陣列('0001') // 0001 是二進位
+     * console.log(v3.總和(排除項目) // 9
+     */
+    sum (excludedElements) {
+        this.#ensureExcludedElementsIs位元陣列(excludedElements)
+
+        // for 比 reduce 快 10 倍
+
+        // 找到第一個未被excludedElements
+        let result
+        let i = 0
+        if (excludedElements) {
+            while (i &lt; this.length &amp;&amp; excludedElements.get(i)) {
+                i++
+            }
+        }
+
+        // 如果有找到，當做初始值
+        if (i &lt; this.length) {
+            result = this[i]
+            i++
+        }
+
+        while (i &lt; this.length) {
+            if (excludedElements &amp;&amp; excludedElements.get(i)) continue
+            result += this[i]
+            i++
+        }
+        return result
+    }
+
+    /**
+     * 每個元素會被callback回傳值取代。如果元素的索引在excludedElements中設為 true，便會被排除。
+     * @param {位元陣列} excludedElements
+     * @param callback
+     * @return {Vector} 向量本身
+     * @throws {型別錯誤} 如果excludedElements不是位元陣列會拋出此例外。
+     */
+    updateAll (excludedElements, callback) {
+        this.#ensureExcludedElementsIs位元陣列(excludedElements)
+        for (let i = 0; i &lt; this.length; i++) {
+            if (excludedElements &amp;&amp; excludedElements.get(i)) {
+                continue
+            }
+            this[i] = callback(this[i], i)
+        }
+        return this
+    }
+}
+
+module.exports = Vector
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="img/toast-ui.png" style="">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>

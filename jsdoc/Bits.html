@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: 位元陣列 | Class: 位元陣列</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="">
+
+            <img src="img/toast-ui.png" width="100%" height="100%">
+
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Class: 位元陣列</a></h1>
+
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-Type.html">Type</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:Type_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-Type.html#~TOLERANCE">TOLERANCE</a></li><li><a href="module-Type.html#~TYPE_NAME">TYPE_NAME</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-Type.html#~equals">equals</a></li><li><a href="module-Type.html#~getType">getType</a></li><li><a href="module-Type.html#~isArray">isArray</a></li><li><a href="module-Type.html#~isBoolean">isBoolean</a></li><li><a href="module-Type.html#~isDate">isDate</a></li><li><a href="module-Type.html#~isFunction">isFunction</a></li><li><a href="module-Type.html#~isNotArray">isNotArray</a></li><li><a href="module-Type.html#~isNotBoolean">isNotBoolean</a></li><li><a href="module-Type.html#~isNotDate">isNotDate</a></li><li><a href="module-Type.html#~isNotFunction">isNotFunction</a></li><li><a href="module-Type.html#~isNotNull">isNotNull</a></li><li><a href="module-Type.html#~isNotNumber">isNotNumber</a></li><li><a href="module-Type.html#~isNotObject">isNotObject</a></li><li><a href="module-Type.html#~isNotRegex">isNotRegex</a></li><li><a href="module-Type.html#~isNotString">isNotString</a></li><li><a href="module-Type.html#~isNull">isNull</a></li><li><a href="module-Type.html#~isNumber">isNumber</a></li><li><a href="module-Type.html#~isObject">isObject</a></li><li><a href="module-Type.html#~isRegex">isRegex</a></li><li><a href="module-Type.html#~isSameType">isSameType</a></li><li><a href="module-Type.html#~isSmallValue">isSmallValue</a></li><li><a href="module-Type.html#~isString">isString</a></li><li><a href="module-Type.html#~isUndefined">isUndefined</a></li><li><a href="module-Type.html#~removeTailingZero">removeTailingZero</a></li></ul></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596.html">例外</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外_sub"></div></li><li><a href="module-%25E5%25AD%2597%25E4%25B8%25B2%25E5%25B7%25A5%25E5%2585%25B7.html">字串工具</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:字串工具_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-%2525E5%2525AD%252597%2525E4%2525B8%2525B2%2525E5%2525B7%2525A5%2525E5%252585%2525B7.html#~移除空白字元">移除空白字元</a></li><li><a href="module-%2525E5%2525AD%252597%2525E4%2525B8%2525B2%2525E5%2525B7%2525A5%2525E5%252585%2525B7.html#~repeat">repeat</a></li><li><a href="module-%2525E5%2525AD%252597%2525E4%2525B8%2525B2%2525E5%2525B7%2525A5%2525E5%252585%2525B7.html#~%25E8%25A9%259E%25E5%25BD%2599%25E6%2598%25AF%25E5%2590%25A6%25E5%2590%258C%25E6%2599%2582%25E5%2587%25BA%25E7%258F%25BE">findAll</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3>Classes</h3><ul><li><a href="位元陣列.html">位元陣列</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="位元陣列_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="位元陣列.html#count">count</a></li><li><a href="位元陣列.html#pageCount">pageCount</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="位元陣列.html#and">and</a></li><li><a href="位元陣列.html#clone">clone</a></li><li><a href="位元陣列.html#get">get</a></li><li><a href="位元陣列.html#not">not</a></li><li><a href="位元陣列.html#or">or</a></li><li><a href="位元陣列.html#parse">parse</a></li><li><a href="位元陣列.html#set">set</a></li><li><a href="位元陣列.html#setAll">setAll</a></li><li><a href="位元陣列.html#toString">toString</a></li><li><a href="位元陣列.html#xor">xor</a></li></ul></div></li><li><a href="Matrix.html">Matrix</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Matrix_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="Matrix.html#columns">columns</a></li><li><a href="Matrix.html#rows">rows</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="Matrix.html#.createIdentityMatrix">createIdentityMatrix</a></li><li><a href="Matrix.html#add">add</a></li><li><a href="Matrix.html#clear">clear</a></li><li><a href="Matrix.html#column">column</a></li><li><a href="Matrix.html#copyRange">copyRange</a></li><li><a href="Matrix.html#equals">equals</a></li><li><a href="Matrix.html#expand">expand</a></li><li><a href="Matrix.html#fill">fill</a></li><li><a href="Matrix.html#forEachColumn">forEachColumn</a></li><li><a href="Matrix.html#forEachRow">forEachRow</a></li><li><a href="Matrix.html#inverse">inverse</a></li><li><a href="Matrix.html#isAntisymmetric">isAntisymmetric</a></li><li><a href="Matrix.html#isSymmetric">isSymmetric</a></li><li><a href="Matrix.html#multiply">multiply</a></li><li><a href="Matrix.html#power">power</a></li><li><a href="Matrix.html#row">row</a></li><li><a href="Matrix.html#setColumn">setColumn</a></li><li><a href="Matrix.html#setDimension">setDimension</a></li><li><a href="Matrix.html#setRow">setRow</a></li><li><a href="Matrix.html#subtract">subtract</a></li><li><a href="Matrix.html#sum">sum</a></li><li><a href="Matrix.html#transpose">transpose</a></li></ul></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-索引超出範圍錯誤.html">索引超出範圍錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~索引超出範圍錯誤_sub"></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-二進位字串內容錯誤.html">二進位字串內容錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~二進位字串內容錯誤_sub"></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-參數錯誤.html">參數錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~參數錯誤_sub"></div></li><li><a href="module-%25E4%25BE%258B%25E5%25A4%2596-型別錯誤.html">型別錯誤</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:例外~型別錯誤_sub"></div></li><li><a href="TextFile.html">TextFile</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="TextFile_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="TextFile.html#fileName">fileName</a></li><li><a href="TextFile.html#mode">mode</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="TextFile.html#append">append</a></li><li><a href="TextFile.html#readAll">readAll</a></li><li><a href="TextFile.html#rewrite">rewrite</a></li><li><a href="TextFile.html#write">write</a></li><li><a href="TextFile.html#writeLine">writeLine</a></li></ul></div></li><li><a href="Vector.html">Vector</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="Vector_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="Vector.html#add">add</a></li><li><a href="Vector.html#append">append</a></li><li><a href="Vector.html#clone">clone</a></li><li><a href="Vector.html#cross">cross</a></li><li><a href="Vector.html#dot">dot</a></li><li><a href="Vector.html#equals">equals</a></li><li><a href="Vector.html#findPairs">findPairs</a></li><li><a href="Vector.html#firstElementLargerThan">firstElementLargerThan</a></li><li><a href="Vector.html#firstElementLessThan">firstElementLessThan</a></li><li><a href="Vector.html#isZero">isZero</a></li><li><a href="Vector.html#iterate">iterate</a></li><li><a href="Vector.html#max">max</a></li><li><a href="Vector.html#min">min</a></li><li><a href="Vector.html#multiply">multiply</a></li><li><a href="Vector.html#sum">sum</a></li><li><a href="Vector.html#updateAll">updateAll</a></li></ul></div></li></ul></div><div class="lnb-api hidden"><h3><a href="global.html">Global</a></h3></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+
+
+
+
+
+<section>
+
+<header>
+
+        <h2><span class="attribs"><span class="type-signature"></span></span>位元陣列<span class="signature">(initValue)</span><span class="type-signature"></span></h2>
+
+            <div class="class-description">位元陣列 適合用來記錄大量的 boolean 值，其記憶體使用量為用單一 boolean(4 bytes)的 1/24。</div>
+
+
+</header>
+
+<article>
+
+        <div class="container-overview">
+
+
+
+<dt>
+
+        <h4 class="name" id="位元陣列">
+
+                new <span class="type-signature"></span>位元陣列<span class="signature">(initValue)</span><span class="type-signature"></span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line15">line 15</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>initValue</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last">如果傳入數值，代表要存放幾個位元。如果isString，則會將字串視為二進位字串去解析。</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Throws:</h5>
+
+
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        如果位元數不是大於零的數值會拋出此例外。
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+
+<span class="param-type">型別錯誤</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+        <h5>Example</h5>
+
+    <pre class="prettyprint"><code>let 位元陣列1 = new 位元陣列('01010101')
+let 位元陣列2 = new 位元陣列(3)</code></pre>
+
+
+
+</dd>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+
+
+<dt>
+<h4 class="name" id="count">
+    <span class="type-signature"></span>count<span class="type-signature"></span>
+
+    <div class="container-source members">
+        <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+        <code><a href="位元陣列.js.html#line45">line 45</a></code>
+    </div>
+
+</h4>
+
+
+</dt>
+<dd>
+
+    <div class="description">
+        位元數目。
+    </div>
+
+
+    <!--
+
+    -->
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+<h4 class="name" id="pageCount">
+    <span class="type-signature"></span>pageCount<span class="type-signature"></span>
+
+    <div class="container-source members">
+        <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+        <code><a href="位元陣列.js.html#line53">line 53</a></code>
+    </div>
+
+</h4>
+
+
+</dt>
+<dd>
+
+    <div class="description">
+        頁面數目。一頁可以放 24 個位元，若有 25 個位元，頁面數目應為 2。
+    </div>
+
+
+    <!--
+
+    -->
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+
+</dd>
+
+        </dl>
+
+
+
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+
+
+<dt>
+
+        <h4 class="name" id="and">
+
+                <span class="type-signature"></span>and<span class="signature">(參數另一個向量的長度必須相同)</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line124">line 124</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        與傳入的 位元陣列 做 and 運算，並回傳新 位元陣列 。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>參數另一個向量的長度必須相同</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last"></td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Throws:</h5>
+
+
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        當對象的位元數不同時會拋出此例外。
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+
+<span class="param-type">參數錯誤</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+- 新 位元陣列 。
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="clone">
+
+                <span class="type-signature"></span>clone<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line137">line 137</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        複製自己到新的 位元陣列 。
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="get">
+
+                <span class="type-signature"></span>get<span class="signature">(bitNumber)</span><span class="type-signature"> &rarr; {boolean}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line150">line 150</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        取得編號位置的位元狀態。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>bitNumber</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">number</span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last">位元編號必須 >= 0 且小於位元數</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Throws:</h5>
+    <ul>
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        如果位元編號isNotNumber會拋出此例外。
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+
+<span class="param-type">型別錯誤</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+
+            <li>
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        如果位元編號超出範圍會拋出此例外。
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+
+<span class="param-type">索引超出範圍錯誤</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+</li>
+        </ul>
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+- 如果編號位置的位元是1則回傳 true，否則回傳 false。
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="not">
+
+                <span class="type-signature"></span>not<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line160">line 160</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        位元陣列 做 not 運算，並回傳新 位元陣列 。
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+- 新 位元陣列 。
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="or">
+
+                <span class="type-signature"></span>or<span class="signature">(參數另一個向量的長度必須相同)</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line172">line 172</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        與傳入的 位元陣列 做 or 運算，並回傳新 位元陣列 。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>參數另一個向量的長度必須相同</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last"></td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Throws:</h5>
+
+
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        當對象的位元數不同時會拋出此例外。
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+
+<span class="param-type">參數錯誤</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+- 新 位元陣列 。
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="parse">
+
+                <span class="type-signature"></span>parse<span class="signature">(binStr)</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line189">line 189</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        解析二進位字串。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>binStr</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">string</span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last">二進位字串。如果有空白字元，它們會被移除，不影響解析。</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+        <h5>Example</h5>
+
+    <pre class="prettyprint"><code>const 位元陣列 = new 位元陣列(0)
+位元陣列.parse('10101010')</code></pre>
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="set">
+
+                <span class="type-signature"></span>set<span class="signature">(bitNumber, status)</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line216">line 216</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        設定位元編號的狀態。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>bitNumber</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">number</span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last">位元編號必須 >= 0 且小於位元數</td>
+        </tr>
+
+
+
+        <tr>
+
+                <td class="name"><code>status</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">boolean</span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last">true or false。</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+        <h5>Example</h5>
+
+    <pre class="prettyprint"><code>const 位元陣列 = new 位元陣列(24)
+位元陣列.set(1, true)
+位元陣列.set(2, false)</code></pre>
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="setAll">
+
+                <span class="type-signature"></span>setAll<span class="signature">(status)</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line236">line 236</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        設定所有位元的狀態為 true 或 false。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>status</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type">boolean</span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last">true 或 false。</td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+        <h5>Example</h5>
+
+    <pre class="prettyprint"><code>const 位元陣列 = new 位元陣列(25)
+位元陣列.setAll(true) // 1111111111111111111111111</code></pre>
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="toString">
+
+                <span class="type-signature"></span>toString<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line247">line 247</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        將整個 位元陣列 用 01 的字串表示。
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type">string</span>
+
+
+
+
+
+- 長度等於位元數的 01 字串。
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+
+
+
+<dt>
+
+        <h4 class="name" id="xor">
+
+                <span class="type-signature"></span>xor<span class="signature">(參數另一個向量的長度必須相同)</span><span class="type-signature"> &rarr; {<a href="位元陣列.html">位元陣列</a>}</span>
+
+
+            <div class="container-source members">
+                <code><a href="位元陣列.js.html">位元陣列.js</a></code>,
+                <code><a href="位元陣列.js.html#line264">line 264</a></code>
+            </div>
+
+        </h4>
+
+
+
+</dt>
+<dd>
+
+
+    <div class="description">
+        與傳入的 位元陣列 做 xor 運算，並回傳新 位元陣列 。
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container-params">
+        <h5>Parameters:</h5>
+
+<table class="params">
+    <thead>
+    <tr>
+
+        <th>Name</th>
+
+
+        <th>Type</th>
+
+
+
+
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+
+        <tr>
+
+                <td class="name"><code>參數另一個向量的長度必須相同</code></td>
+
+
+            <td class="type">
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+            </td>
+
+
+
+
+
+            <td class="description last"></td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Throws:</h5>
+
+
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        當對象的位元數不同時會拋出此例外。
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+
+<span class="param-type">參數錯誤</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+
+
+
+    <div class="container-returns">
+        <h5>Returns:</h5>
+
+
+
+
+
+<span class="param-type"><a href="位元陣列.html">位元陣列</a></span>
+
+
+
+
+
+- 新 位元陣列 。
+
+
+
+
+
+    </div>
+
+
+
+
+
+<dl class="details">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</dl>
+
+
+
+
+</dd>
+
+            </dl>
+
+
+
+
+
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="img/toast-ui.png" style="">
+    <div class="footer-text">NHN Entertainment. Frontend Development Lab</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = '位元陣列_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>
