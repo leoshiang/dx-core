@@ -5,7 +5,7 @@ const 錯誤訊息 = require("./錯誤訊息");
 /**
  * @enum { string }
  */
-const TYPE_NAME = {
+const 型別名稱 = {
     /** 陣列 **/
     Array: 'Array',
 
@@ -42,7 +42,7 @@ const TYPE_NAME = {
  * @const
  * @type {number}
  */
-const TOLERANCE = 1.0E-8 // 1.0E-150
+let TOLERANCE = 1.0E-8 // Number.EPSILON = 1.0E-150
 
 /**
  * 取得型別。
@@ -50,140 +50,140 @@ const TOLERANCE = 1.0E-8 // 1.0E-150
  * @returns
  * {('Array'|'Boolean'|'Date'|'Function'|'Null'|'Number'|'RegExp'|'String'|'Undefined')} 型別字串。
  */
-const getType = (obj) => Object.prototype.toString.call(obj).slice(8, -1)
+const 取得型別 = (obj) => Object.prototype.toString.call(obj).slice(8, -1)
 
 /**
  * 判斷參數是否為陣列。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是陣列，回傳 true，否則回傳 false。
  */
-const 是陣列 = (obj) => getType(obj) === TYPE_NAME.Array
+const 是陣列 = (obj) => 取得型別(obj) === 型別名稱.Array
 
 /**
  * 判斷參數是否為布林值。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是布林值，回傳 true，否則回傳 false。
  */
-const isBoolean = (obj) => getType(obj) === TYPE_NAME.Boolean
+const 是布林 = (obj) => 取得型別(obj) === 型別名稱.Boolean
 
 /**
  * 判斷參數是否為日期。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是日期，回傳 true，否則回傳 false。
  */
-const isDate = (obj) => getType(obj) === TYPE_NAME.Date
+const 是日期 = (obj) => 取得型別(obj) === 型別名稱.Date
 
 /**
  * 判斷參數是否為函式。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是函式，回傳 true，否則回傳 false。
  */
-const isFunction = (obj) => getType(obj) === TYPE_NAME.Function
+const 是函式 = (obj) => 取得型別(obj) === 型別名稱.Function
 
 /**
  * 判斷參數是否為null。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是null，回傳 true，否則回傳 false。
  */
-const isNull = (obj) => getType(obj) === TYPE_NAME.Null
+const 是空值 = (obj) => 取得型別(obj) === 型別名稱.Null
 
 /**
  * 判斷參數是否為數值。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是數值，回傳 true，否則回傳 false。
  */
-const 是數值 = (obj) => getType(obj) === TYPE_NAME.Number
+const 是數值 = (obj) => 取得型別(obj) === 型別名稱.Number
 
 /**
  * 判斷參數是否為物件。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是物件，回傳 true，否則回傳 false。
  */
-const isObject = (obj) => getType(obj) === TYPE_NAME.Object
+const 是物件 = (obj) => 取得型別(obj) === 型別名稱.Object
 
 /**
  * 判斷參數是否為正規表示式。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是正規表示式，回傳 true，否則回傳 false。
  */
-const isRegex = (obj) => getType(obj) === TYPE_NAME.RegExp
+const 是正規表示式 = (obj) => 取得型別(obj) === 型別名稱.RegExp
 
 /**
  * 判斷參數是否為字串。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是字串，回傳 true，否則回傳 false。
  */
-const 是字串 = (obj) => getType(obj) === TYPE_NAME.String
+const 是字串 = (obj) => 取得型別(obj) === 型別名稱.String
 
 /**
  * 判斷參數是否為undefined。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 是 undefined，回傳 true，否則回傳 false。
  */
-const isUndefined = (obj) => getType(obj) === TYPE_NAME.Undefined
+const 是未定義 = (obj) => 取得型別(obj) === 型別名稱.Undefined
 
 /**
  * 判斷參數不是陣列。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是陣列，回傳 true，否則回傳 false。
  */
-const isNotArray = (obj) => getType(obj) !== TYPE_NAME.Array
+const 不是陣列 = (obj) => 取得型別(obj) !== 型別名稱.Array
 
 /**
  * 判斷參數不是布林值。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是布林值，回傳 true，否則回傳 false。
  */
-const isNotBoolean = (obj) => getType(obj) !== TYPE_NAME.Boolean
+const 不是布林 = (obj) => 取得型別(obj) !== 型別名稱.Boolean
 
 /**
  * 判斷參數不是日期。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是日期，回傳 true，否則回傳 false。
  */
-const isNotDate = (obj) => getType(obj) !== TYPE_NAME.Date
+const 不是日期 = (obj) => 取得型別(obj) !== 型別名稱.Date
 
 /**
  * 判斷參數不是函式。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是函式，回傳 true，否則回傳 false。
  */
-const 不是函式 = (obj) => getType(obj) !== TYPE_NAME.Function
+const 不是函式 = (obj) => 取得型別(obj) !== 型別名稱.Function
 
 /**
  * 判斷參數不是null。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是null，回傳 true，否則回傳 false。
  */
-const isNotNull = (obj) => getType(obj) !== TYPE_NAME.Null
+const 不是空值 = (obj) => 取得型別(obj) !== 型別名稱.Null
 
 /**
  * 判斷參數不是數值。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是數值，回傳 true，否則回傳 false。
  */
-const 不是數值 = (obj) => getType(obj) !== TYPE_NAME.Number
+const 不是數值 = (obj) => 取得型別(obj) !== 型別名稱.Number
 
 /**
  * 判斷參數不是物件。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是物件，回傳 true，否則回傳 false。
  */
-const isNotObject = (obj) => getType(obj) !== TYPE_NAME.Object
+const 不是物件 = (obj) => 取得型別(obj) !== 型別名稱.Object
 
 /**
  * 判斷參數不是正規表示式。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是正規表示式，回傳 true，否則回傳 false。
  */
-const isNotRegex = (obj) => getType(obj) !== TYPE_NAME.RegExp
+const 不是正規表示式 = (obj) => 取得型別(obj) !== 型別名稱.RegExp
 
 /**
  * 判斷參數不是字串。
  * @param obj 要判斷型別的物件。
  * @returns {boolean} 如果 obj 不是字串，回傳 true，否則回傳 false。
  */
-const isNotString = (obj) => getType(obj) !== TYPE_NAME.String
+const 不是字串 = (obj) => 取得型別(obj) !== 型別名稱.String
 
 /**
  * 判斷兩個物件的型別是否相同。
@@ -191,7 +191,7 @@ const isNotString = (obj) => getType(obj) !== TYPE_NAME.String
  * @param 參數另一個向量的長度必須相同 要判斷型別的物件。
  * @returns {boolean} 如果兩個物件的型別相同，回傳 true，否則回傳 false。
  */
-const isSameType = (obj, 參數另一個向量的長度必須相同) => getType(obj) === getType(參數另一個向量的長度必須相同)
+const 同型別 = (obj, 參數另一個向量的長度必須相同) => 取得型別(obj) === 取得型別(參數另一個向量的長度必須相同)
 
 /**
  * 判斷兩個數值是否相同。
@@ -206,14 +206,15 @@ const 兩個數值相等 = (a, b) => Math.abs(a - b) <= TOLERANCE
  * @param {number} x
  * @returns {boolean} 如果小於 TOLERANCE，則回傳 true，否則回傳 false。
  */
-const isSmallValue = (x) => Math.abs(x) < TOLERANCE
+const 是很小的值 = (x) => Math.abs(x) < TOLERANCE
 
 /**
  * 移除小數點之後的連續的 0。
  * @param {number} x
+ * @param {number} 精確度
  * @returns {number}
  */
-const removeTailingZero = (x) => parseFloat(x.toFixed(8).toString())
+const 修正精確度誤差 = (x, 精確度 = 10) => parseFloat(x.toFixed(精確度).toString())
 
 const 回呼函式的型別必須是函式 = (回呼函式) => {
     if (回呼函式 && 不是函式(回呼函式)) {
@@ -222,30 +223,30 @@ const 回呼函式的型別必須是函式 = (回呼函式) => {
 }
 
 module.exports = {
-    TYPE_NAME,
-    getType,
+    型別名稱,
+    取得型別,
     是陣列,
-    isBoolean,
-    isDate,
-    isFunction,
-    isNull,
+    是布林,
+    是日期,
+    是函式,
+    是空值,
     是數值,
-    isObject,
-    isRegex,
+    是物件,
+    是正規表示式,
     是字串,
-    isUndefined,
-    isNotArray,
-    isNotBoolean,
-    isNotDate,
+    是未定義,
+    不是陣列,
+    不是布林,
+    不是日期,
     不是函式,
-    isNotNull,
+    不是空值,
     不是數值,
-    isNotObject,
-    isNotRegex,
-    isNotString,
-    isSameType,
+    不是物件,
+    不是正規表示式,
+    不是字串,
+    同型別,
     兩個數值相等,
-    isSmallValue,
-    removeTailingZero,
+    是很小的值,
+    修正精確度誤差,
     回呼函式的型別必須是函式
 }

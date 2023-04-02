@@ -14,7 +14,8 @@ const 錯誤訊息 = require('./錯誤訊息')
  * @class
  * @classdesc 向量。
  */
-class 向量 extends Array {
+
+module.exports = class 向量 extends Array {
 
     /**
      * @constructor
@@ -137,6 +138,10 @@ class 向量 extends Array {
         }
     }
 
+    #索引必須在範圍內(index) {
+        if (index < 0 || index >= this.length) throw new Error(錯誤訊息.向量.索引超出範圍)
+    }
+
     /**
      * 每一個項目乘上傳入的倍數。
      * @param {number} 倍數
@@ -152,6 +157,21 @@ class 向量 extends Array {
             新向量[i] = this[i] * 倍數
         }
         return 新向量
+    }
+
+    /**
+     * 交換元素。
+     * @param {int} a
+     * @param {int} b
+     * @return {向量}
+     */
+    交換(a, b) {
+        this.#索引必須在範圍內(a)
+        this.#索引必須在範圍內(b)
+        let temp = this[a]
+        this[a] = this[b]
+        this[b] = temp
+        return this
     }
 
     /**
@@ -304,34 +324,21 @@ class 向量 extends Array {
     }
 
     /**
-     * 尋找是否有相鄰的兩個數字。
-     * @param {number} a
-     * @param {number} b
+     * 尋找是否有相鄰的兩個項目。
+     * @param {*} a
+     * @param {*} b
      * @return {boolean}
      */
     有相鄰的(a, b) {
         if (this.length <= 1) return false
-        const 第一個數字的索引 = this.indexOf(a)
-        if (第一個數字的索引 === -1) return false
-        if (第一個數字的索引 >= this.length - 1) return false
-        return 型別.兩個數值相等(this[第一個數字的索引 + 1], b)
-    }
-
-    /**
-     * 與另一個向量是否相等。當兩個數值差異小於 0.00000001 時，會被認為是相等。
-     * @param {向量|Array} 另一個向量
-     * @return {boolean}
-     * @throws {型別錯誤} 如果另一個向量的型別不是向量會拋出此例外。
-     */
-    相等於(另一個向量) {
-        if (!(另一個向量 instanceof 向量) && 型別.isNotArray(另一個向量)) {
-            throw new 型別錯誤(錯誤訊息.向量.參數另一個向量的型別必須是向量或陣列)
+        const 第一個項目的索引 = this.indexOf(a)
+        if (第一個項目的索引 === -1) return false
+        if (第一個項目的索引 >= this.length - 1) return false
+        const 第二個項目 = this[第一個項目的索引 + 1]
+        if (型別.是數值(a) && 型別.是數值(b)) {
+            return 型別.兩個數值相等(第二個項目, b)
         }
-        if (另一個向量.length !== this.length) return false
-        for (let i = 0; i < this.length; i++) {
-            if (!型別.兩個數值相等(this[i], 另一個向量[i])) return false
-        }
-        return true
+        return 第二個項目 === b
     }
 
     /**
@@ -370,6 +377,23 @@ class 向量 extends Array {
     第一個小於(目標值, 排除項目 = null) {
         const 條件 = (目前的項目, 目標值) => 目前的項目 < 目標值
         return this.#尋找第一個符合條件的項目(目標值, 排除項目, 條件)
+    }
+
+    /**
+     * 與另一個向量是否相等。當兩個數值差異小於 0.00000001 時，會被認為是相等。
+     * @param {向量|Array} 另一個向量
+     * @return {boolean}
+     * @throws {型別錯誤} 如果另一個向量的型別不是向量會拋出此例外。
+     */
+    等於(另一個向量) {
+        if (!(另一個向量 instanceof 向量) && 型別.不是陣列(另一個向量)) {
+            throw new 型別錯誤(錯誤訊息.向量.參數另一個向量的型別必須是向量或陣列)
+        }
+        if (另一個向量.length !== this.length) return false
+        for (let i = 0; i < this.length; i++) {
+            if (!型別.兩個數值相等(this[i], 另一個向量[i])) return false
+        }
+        return true
     }
 
     /**
@@ -414,5 +438,3 @@ class 向量 extends Array {
         return 新向量
     }
 }
-
-module.exports = 向量

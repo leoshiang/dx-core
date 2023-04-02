@@ -12,7 +12,8 @@ const {
  * @class
  * @classdesc 位元陣列適合用來記錄大量的 boolean 值，其記憶體使用量為用單一 boolean(4 bytes)的 1/24。
  */
-class 位元陣列 {
+
+module.exports = class 位元陣列 {
     #一頁可紀錄的位元數 = 24
     #四位元組 = [
         '0000', '0001', '0010', '0011', '0100', '0101', '0110', '0111',
@@ -274,5 +275,3 @@ class 位元陣列 {
         return 回傳結果.slice(回傳結果.length - this.#數量)
     }
 }
-
-module.exports = 位元陣列

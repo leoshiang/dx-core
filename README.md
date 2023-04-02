@@ -4,14 +4,14 @@
 
 ## 特色
 
-* Type 是將一些型別判斷的功能的集合。
-* 位元陣列 是一個最佳化過的位元陣列，當你需要儲存大量的 Boolean 值時，位元陣列 所佔用的空間是一般陣列的 1/24。
-* Vector 是多維的向量。
-* Matrix 是二維Matrix，提供基本的Matrix運算。
+* `型別` 是將一些型別判斷的功能的集合。
+* `位元陣列` 是一個最佳化過的位元陣列，當你需要儲存大量的 Boolean 值時，位元陣列所佔用的空間是一般陣列的 1/24。
+* `向量` 是多維的向量。
+* `矩陣` 是二維矩陣，提供基本的矩陣運算。
 
 ## 文件
 
-* [matrix](https://leoshiang.github.io/dolphin-node-core/matrix.html)
+* [矩陣](https://leoshiang.github.io/dolphin-node-core/矩陣.html)
 
 ## 下載
 ```bash

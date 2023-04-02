@@ -1,6 +1,0 @@
-const Vector = require('../src/向量')
-const a = new 向量([3, 4, 1])
-const b = new 向量([3, 7, 5])
-const c1 = a.外積(b)
-const c2 = b.乘(-1).外積(a)
-console.log(c1.相等於(c2))
