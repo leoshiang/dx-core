@@ -1,6 +1,6 @@
 # dolphin-node-core
 
-`dolphin-node-core` 是一個 node.js 的套件，由向皓田開發，採用 MIT 授權。此套件包含了一些常用的 JavaScript 物件集合，例如：型別處理、vector、matrix、位元陣列。
+`dolphin-node-core` 是一個 node.js 的套件，由向皓田開發，採用 MIT 授權。此套件包含了一些常用的 JavaScript 物件集合：型別、向量、矩陣、位元陣列。
 
 ## 特色
 

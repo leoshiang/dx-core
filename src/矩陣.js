@@ -340,7 +340,7 @@ module.exports = class 矩陣 extends Array {
         if (this.特徵值 === 0) {
             throw new Error(錯誤訊息.矩陣.因為行列式為零所以此矩陣沒有反矩陣)
         }
-         if (this.#直行數量 !== this.#橫列數量) {
+        if (this.#直行數量 !== this.#橫列數量) {
             throw new Error(錯誤訊息.矩陣.因為不是方陣所以此矩陣沒有反矩陣)
         }
         let 暫存矩陣 = this.合併直行(矩陣.單位矩陣(this.橫列數量))

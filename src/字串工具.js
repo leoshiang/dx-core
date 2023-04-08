@@ -4,20 +4,20 @@ const 錯誤訊息 = require('./錯誤訊息')
 
 function 格式化(模板) {
     if (arguments.length < 2) {
-        throw new Error(錯誤訊息.format.至少要有二個參數)
+        throw new Error(錯誤訊息.格式化.至少要有二個參數)
     }
 
     if (!模板) {
-        throw new Error(錯誤訊息.format.模板不可以是空值)
+        throw new Error(錯誤訊息.格式化.模板不可以是空值)
     }
 
     let variables = 模板.match(/{([0-9]+)}/gi)
     if (!variables) {
-        throw new Error(錯誤訊息.format.模板裡面未設定變數)
+        throw new Error(錯誤訊息.格式化.模板裡面未設定變數)
     }
 
     if (variables.length !== arguments.length - 1) {
-        throw new Error(錯誤訊息.format.參數與模板裡面的變數數量不同)
+        throw new Error(錯誤訊息.格式化.參數與模板裡面的變數數量不同)
     }
 
     let result = 模板
