@@ -1,8 +1,8 @@
 {
   "name": "dolphin-node-core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/index.bundle.js",
-  "description": "dolphin-node-core 是一個 npm 套件，包含了一些常用的 JavaScript 物件集合，例如：型別、向量、矩陣、位元陣列。",
+  "description": "",
   "author": "Leo Shiang <leoshiang@gmail.com>",
   "homepage": "https://github.com/leoshiang/dolphin-node-core#readme",
   "license": "MIT",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.21.4",
-    "babel-loader": "^9.1.2",
-    "dolphin-node-core": "^0.1.0"
+    "babel-loader": "^9.1.2"
   }
 }
