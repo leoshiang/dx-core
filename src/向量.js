@@ -189,26 +189,26 @@ module.exports = class 向量 extends Array {
 
     /**
      * 向量的每一個項目與傳入的數值或向量相加。
-     * @param {number|向量} 另一個向量 add 可以傳入數值或是 向量。如果傳入數值，add 會將向量的每一個項目加上傳入的數值。如果傳入 向量，結果是自身的項目和向量的項目相加，要注意的是傳入向量的長度必須相同，否則會發生錯誤。
-     * @return {向量} 回傳新的 向量。
+     * @param {*} 來源 如果傳入向量，結果是自身的項目和向量的項目相加，要注意的是傳入向量的長度必須相同，否則會發生錯誤。
+     *                如果傳入其他型態，會將向量的每一個項目加上傳入的參數。
+     * @return {向量} 回傳新的向量。
      * @throws {型別錯誤|參數錯誤}
      */
-    加(另一個向量) {
-        if (另一個向量 instanceof 向量) {
-            if (另一個向量.length !== this.length) {
-                throw new 參數錯誤(錯誤訊息.向量.參數另一個向量的長度必須相同)
+    加(來源) {
+        if (!來源) return this.複製()
+        if (來源 instanceof 向量) {
+            if (來源.length !== this.length) {
+                throw new 參數錯誤(錯誤訊息.向量.參數來源的長度必須相同)
             }
-        } else if (型別.不是數值(另一個向量)) {
-            throw new 型別錯誤(錯誤訊息.向量.參數另一個向量的長度必須相同且型別必須是數值或向量)
         }
         let 回傳結果 = new 向量(this.length)
-        if (型別.是數值(另一個向量)) {
+        if (來源 instanceof 向量) {
             for (let i = 0; i < this.length; i++) {
-                回傳結果[i] = this[i] + 另一個向量
+                回傳結果[i] = this[i] + 來源[i]
             }
         } else {
             for (let i = 0; i < this.length; i++) {
-                回傳結果[i] = this[i] + 另一個向量[i]
+                回傳結果[i] = this[i] + 來源
             }
         }
         return 回傳結果

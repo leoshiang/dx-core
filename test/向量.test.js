@@ -192,12 +192,18 @@ describe('測試【加】】', () => {
             .toThrow(參數錯誤)
     })
 
-    test('傳入數值與 向量 之外的參數，應拋出 型別錯誤 例外', () => {
-        expect(() => new 向量([1, 2, 3]).加('a')).toThrow(型別錯誤)
+    test('文字向量加上文字', () => {
+        const v1 = new 向量(['a', 'b', 'c'])
+        const v2 = v1.加('1')
+        expect(v2[0]).toBe('a1')
+        expect(v2[1]).toBe('b1')
+        expect(v2[2]).toBe('c1')
     })
 
-    test('不傳入參數，應拋出型別錯誤例外', () => {
-        expect(() => new 向量([1, 2, 3]).加()).toThrow(型別錯誤)
+    test('不傳入參數，應回傳完全相同的新向量', () => {
+        const v1 = new 向量([1, 2, 3])
+        const v2 = v1.加()
+        expect(v1).toEqual(v2)
     })
 })
 
