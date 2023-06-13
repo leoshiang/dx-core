@@ -1,6 +1,6 @@
-# dolphin-node-core
+# dx-core
 
-`dolphin-node-core` 是一個 node.js 的套件，由向皓田開發，採用 MIT 授權。此套件包含了一些常用的 JavaScript 物件集合：型別、向量、矩陣、位元陣列。
+`dx-core` 是一個 node.js 的套件，由向皓田開發，採用 MIT 授權。此套件包含了一些常用的 JavaScript 物件集合：型別、向量、矩陣、位元陣列。
 
 ## 特色
 
@@ -11,11 +11,11 @@
 
 ## 文件
 
-* [矩陣](https://leoshiang.github.io/dolphin-node-core/矩陣.html)
+* [矩陣](https://leoshiang.github.io/dx-core/矩陣.html)
 
 ## 下載
 ```bash
-npm install dolphin-node-core
+npm install dx-core
 ```
 
 ## 測試

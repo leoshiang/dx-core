@@ -1,10 +1,10 @@
 {
-  "name": "dolphin-node-core",
-  "version": "0.0.5",
+  "name": "dx-core",
+  "version": "0.0.1",
   "main": "./lib/index.bundle.js",
   "description": "",
   "author": "Leo Shiang <leoshiang@gmail.com>",
-  "homepage": "https://github.com/leoshiang/dolphin-node-core#readme",
+  "homepage": "https://github.com/leoshiang/dx-core#readme",
   "license": "MIT",
   "scripts": {
     "test": "jest",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leoshiang/dolphin-node-core.git"
+    "url": "https://github.com/leoshiang/dx-core.git"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.21.4",
-    "babel-loader": "^9.1.2"
+    "babel-loader": "^9.1.2",
+    "path": "^0.12.7",
+    "stream": "^0.0.2"
   }
 }
