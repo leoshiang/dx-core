@@ -1,0 +1,31 @@
+{
+  "name": "dx-core",
+  "version": "0.0.7",
+  "main": "./lib/index.bundle.js",
+  "description": "",
+  "author": "Leo Shiang <leoshiang@gmail.com>",
+  "homepage": "https://github.com/leoshiang/DXCore#readme",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leoshiang/DXCore.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/node": "^7.20.7",
+    "jest": "^29.5.0",
+    "webpack": "^5.77.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.21.4",
+    "babel-loader": "^9.1.2",
+    "path": "^0.12.7",
+    "stream": "^0.0.2",
+    "sync-fetch": "^0.5.2"
+  }
+}
