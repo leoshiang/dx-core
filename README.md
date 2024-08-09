@@ -12,8 +12,8 @@
 
 ## 文件
 
-* [矩陣](https://leoshiang.github.io/DXCore/矩陣.md)
-* [地理資訊系統](https://leoshiang.github.io/DXCore/地理資訊系統.md)
+* [矩陣](docs/矩陣.md)
+* [地理資訊系統](docs/地理資訊系統.md)
 
 ## 測試
 ```bash
