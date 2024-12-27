@@ -21,8 +21,69 @@ const 錯誤訊息 = require('./錯誤訊息');
  */
 
 /**
- * @class
- * @classdesc 二維陣列。
+ * 矩陣類別
+ *
+ * @class 矩陣
+ * @extends Array
+ * @classdesc
+ * 此類別表示一個二維陣列，基於 JavaScript 的原生 `Array` 類別進行擴展。
+ * 矩陣可用於數學運算或作為數據處理中的二維結構，支援所有 `Array` 方法，
+ * 同時可以進一步擴展實現特定的矩陣運算（如轉置、加法、乘法等功能）。
+ *
+ * @example
+ * // 範例 1: 創建一個空的矩陣
+ * const matrix1 = new 矩陣();
+ * console.log(matrix1); // 輸出: []
+ *
+ * @example
+ * // 範例 2: 創建一個初始值的矩陣
+ * const matrix2 = new 矩陣(
+ *   [1, 2, 3],
+ *   [4, 5, 6],
+ *   [7, 8, 9]
+ * );
+ * console.log(matrix2);
+ * // 輸出:
+ * // [
+ * //   [1, 2, 3],
+ * //   [4, 5, 6],
+ * //   [7, 8, 9]
+ * // ]
+ *
+ * @example
+ * // 範例 3: 獲取矩陣的行列值
+ * const matrix3 = new 矩陣(
+ *   [1, 2, 3],
+ *   [4, 5, 6]
+ * );
+ * console.log(matrix3[0][1]); // 獲取第 0 行第 1 列的值，輸出: 2
+ *
+ * @example
+ * // 範例 4: 擴展矩陣功能 (矩陣轉置)
+ * 矩陣.prototype.轉置 = function () {
+ *   const rows = this.length;
+ *   const cols = this[0]?.length || 0;
+ *   const transposed = new 矩陣();
+ *   for (let i = 0; i < cols; i++) {
+ *     transposed.push([]);
+ *     for (let j = 0; j < rows; j++) {
+ *       transposed[i].push(this[j][i]);
+ *     }
+ *   }
+ *   return transposed;
+ * };
+ * const matrix4 = new 矩陣(
+ *   [1, 2],
+ *   [3, 4],
+ *   [5, 6]
+ * );
+ * const transposed = matrix4.轉置();
+ * console.log(transposed);
+ * // 輸出:
+ * // [
+ * //   [1, 3, 5],
+ * //   [2, 4, 6]
+ * // ]
  */
 module.exports = class 矩陣 extends Array {
 

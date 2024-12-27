@@ -11,10 +11,39 @@ const 錯誤訊息 = require('./錯誤訊息');
  */
 
 /**
- * @class
- * @classdesc 向量。
+ * 向量類別
+ *
+ * @class 向量
+ * @extends Array
+ * @classdesc
+ * 此類別表示一個向量，基於原生 JavaScript 的 `Array` 類別進行擴展，
+ * 可用於數學計算、向量操作或作為多維數據處理中的基本結構。
+ * 支援所有 Array 的方法，並可進一步擴展向量的操作能力。
+ *
+ * @example
+ * // 範例 1: 創建一個空的向量
+ * const vector1 = new 向量();
+ * console.log(vector1); // 輸出: []
+ *
+ * @example
+ * // 範例 2: 創建一個具有初始值的向量
+ * const vector2 = new 向量(1, 2, 3);
+ * console.log(vector2); // 輸出: [1, 2, 3]
+ *
+ * @example
+ * // 範例 3: 使用 Array 的方法操作向量
+ * const vector3 = new 向量(5, 6, 7);
+ * vector3.push(8);
+ * console.log(vector3); // 輸出: [5, 6, 7, 8]
+ *
+ * @example
+ * // 範例 4: 為向量添加自定義操作
+ * 向量.prototype.長度 = function () {
+ *   return Math.sqrt(this.reduce((sum, val) => sum + val ** 2, 0));
+ * };
+ * const vector4 = new 向量(3, 4);
+ * console.log(vector4.長度()); // 返回: 5 (向量模長)
  */
-
 module.exports = class 向量 extends Array {
 
 	/**

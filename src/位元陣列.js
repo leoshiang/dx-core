@@ -9,10 +9,34 @@ const {
 } = require('./例外');
 
 /**
- * @class
- * @classdesc 位元陣列適合用來記錄大量的 boolean 值，其記憶體使用量為用單一 boolean(4 bytes)的 1/24。
+ * 位元陣列 (BitArray)
+ *
+ * @class 位元陣列
+ * @classdesc
+ * 此類別作為一個位元級別的數據結構，用於管理和操作二進位數據。
+ * 位元陣列支援靈活的位元記錄方式，並提供根據字串或數值初始化的功能。
+ * 可用於存放大量位元數據，同時支援分頁管理和位元運算等功能。
+ *
+ * @example
+ * // 範例 1: 初始化一個空的位元陣列
+ * const bitArray1 = new 位元陣列();
+ * console.log(bitArray1.數量); // 輸出: 0
+ *
+ * @example
+ * // 範例 2: 根據指定的二進位字串初始化
+ * const bitArray2 = new 位元陣列("10101");
+ * console.log(bitArray2.數量); // 輸出: 5
+ *
+ * @example
+ * // 範例 3: 使用數值初始化 (位元數量)
+ * const bitArray3 = new 位元陣列(16);
+ * console.log(bitArray3.數量); // 輸出: 16
+ *
+ * @example
+ * // 範例 4: 執行位元操作
+ * bitArray3.設置位元(0, 1); // 設置第 0 位為 1
+ * console.log(bitArray3.取得位元(0)); // 輸出: 1
  */
-
 module.exports = class 位元陣列 {
 	/**
 	 * @private
