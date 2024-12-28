@@ -280,7 +280,7 @@ module.exports = class 向量 extends Array {
 	 * @private
 	 */
 	#檢查三維向量 (向量) {
-		if (!Array.isArray(向量) || 向量.length !== 3) {
+		if (!Array.是陣列(向量) || 向量.length !== 3) {
 			throw new Error(錯誤訊息.向量.外積僅能對三維向量做運算);
 		}
 	}
