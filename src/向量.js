@@ -90,7 +90,7 @@ module.exports = class 向量 extends Array {
 				return;
 			}
 
-			if (型別.是數值(第一個參數)) {
+			if (型別.是數字(第一個參數)) {
 				if (第一個參數 < 0) {
 					throw new 參數錯誤(錯誤訊息.向量.長度必須大於等於零);
 				}
@@ -218,7 +218,7 @@ module.exports = class 向量 extends Array {
 	 */
 	#尋找第一個符合條件的項目 (目標值, 排除項目, 條件) {
 		this.#排除項目的型別必須是位元陣列(排除項目);
-		型別.回呼函式的型別必須是函式(條件);
+		型別.必須是函式(條件);
 
 		for (let 目前索引 = 0; 目前索引 < this.length; 目前索引++) {
 			if (排除項目?.狀態(目前索引)) {
@@ -280,7 +280,7 @@ module.exports = class 向量 extends Array {
 	 * @private
 	 */
 	#檢查三維向量 (向量) {
-		if (!Array.是陣列(向量) || 向量.length !== 3) {
+		if (!Array.isArray(向量) || 向量.length !== 3) {
 			throw new Error(錯誤訊息.向量.外積僅能對三維向量做運算);
 		}
 	}
@@ -380,7 +380,7 @@ module.exports = class 向量 extends Array {
 	 * }
 	 */
 	乘 (倍數) {
-		if (型別.不是數值(倍數)) {
+		if (型別.不是數字(倍數)) {
 			throw new 型別錯誤(錯誤訊息.傳入的參數應為數值);
 		}
 
@@ -736,7 +736,7 @@ module.exports = class 向量 extends Array {
 		}
 
 		const 下一個項目 = this[索引 + 1];
-		return 型別.是數值(a) && 型別.是數值(b)
+		return 型別.是數字(a) && 型別.是數字(b)
 			? 型別.兩個數值相等(下一個項目, b)
 			: 下一個項目 === b;
 	}
@@ -852,7 +852,7 @@ module.exports = class 向量 extends Array {
 	 */
 	迭代 (回呼函式, 排除項目 = null) {
 		// 驗證回呼函式型別
-		型別.回呼函式的型別必須是函式(回呼函式);
+		型別.必須是函式(回呼函式);
 
 		// 若有排除項目，驗證其型別
 		if (排除項目) {

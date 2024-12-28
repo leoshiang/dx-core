@@ -8,7 +8,7 @@ const fetch = require('sync-fetch');
  * @returns {string[]} 返回一個字串陣列，其中每個條目包括地址與其對應的緯度與經度，格式為 `地址,緯度,經度`。
  *
  * @description
- * 此函數接受一組地址，透過 Google Maps 的地址查詢功能獲取其地理座標 (緯度和經度)。
+ * 此函式接受一組地址，透過 Google Maps 的地址查詢功能獲取其地理座標 (緯度和經度)。
  * 每個地址會被轉換成對應的 URL，從 Google Maps 獲取內部 HTML 內容，並通過正則表達 (Regex)
  * 解析緯度與經度數據，然後返回結果陣列。
  *
@@ -30,10 +30,10 @@ const fetch = require('sync-fetch');
  * console.log(results); // 輸出: []
  *
  * @note
- * 使用此函數會依賴 Google Maps 的網址結構與資料回應，若 Google Maps 網址格式
- * 或 HTML 結構變更，此函數可能需要調整。
+ * 使用此函式會依賴 Google Maps 的網址結構與資料回應，若 Google Maps 網址格式
+ * 或 HTML 結構變更，此函式可能需要調整。
  *
- * @throws {Error} 若 `addresses` 不是陣列，或陣列中包含非字串的元素，可能導致函數行為異常。
+ * @throws {Error} 若 `addresses` 不是陣列，或陣列中包含非字串的元素，可能導致函式行為異常。
  */
 function 地址轉座標 (addresses) {
 	const output = [];

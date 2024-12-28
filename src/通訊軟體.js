@@ -11,7 +11,7 @@ const fetch = require('sync-fetch');
  * @returns {void}
  *
  * @description
- * 此函數使用 Telegram Bot API，透過 HTTP 請求 (GET 方法) 傳送一則訊息到指定的聊天或用戶。
+ * 此函式使用 Telegram Bot API，透過 HTTP 請求 (GET 方法) 傳送一則訊息到指定的聊天或用戶。
  * 需確保機器人擁有相應聊天的發送權限，並且提供正確的 `token` 和 `chatId`。
  *
  * @example
@@ -22,7 +22,7 @@ const fetch = require('sync-fetch');
  * 傳送Telegram訊息(botToken, chatId, message);
  *
  * @note
- * 此函數使用的是 Telegram Bot 的 HTTP API，`fetch` 默認使用異步，
+ * 此函式使用的是 Telegram Bot 的 HTTP API，`fetch` 默認使用異步，
  * 若需處理回應（成功與失敗），應考慮使用 `await` 或 `then()`。
  *
  * @throws {Error}

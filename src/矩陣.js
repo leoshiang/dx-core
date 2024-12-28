@@ -360,7 +360,7 @@ module.exports = class 矩陣 extends Array {
 	 * console.log(結果); // [[x+x2, y+y2, ...], ...]
 	 */
 	#加減運算 (目標, 加減數值, 加減矩陣) {
-		const 加減運算 = 型別.是數值(目標)
+		const 加減運算 = 型別.是數字(目標)
 			? 加減數值
 			: (目標 instanceof 矩陣)
 				? 加減矩陣
@@ -612,7 +612,7 @@ module.exports = class 矩陣 extends Array {
 	 * 矩陣A.乘("無效參數"); // 拋出型別錯誤：目標不是矩陣或數值
 	 */
 	乘 (目標) {
-		if (型別.是數值(目標)) {
+		if (型別.是數字(目標)) {
 			return this.#乘以倍數(目標);
 		}
 

@@ -1,4 +1,10 @@
 /**
+ * 判斷數值是否相同的容許值。如果兩個數值相減的結果小於 TOLERANCE，則視為相同。
+ * @const
+ * @type {number}
+ */
+let TOLERANCE = 1.0E-8; // Number.EPSILON = 1.0E-150
+/**
  * 用於描述 JavaScript 基本數據類型的名稱物件。
  *
  * @constant
@@ -6,7 +12,7 @@
  * @property {string} Array - 表示陣列類型的名稱。
  * @property {string} Boolean - 表示布林值類型的名稱。
  * @property {string} Date - 表示日期類型的名稱。
- * @property {string} Function - 表示函數類型的名稱。
+ * @property {string} Function - 表示函式類型的名稱。
  * @property {string} Null - 表示空值類型的名稱。
  * @property {string} Number - 表示數字類型的名稱。
  * @property {string} Object - 表示物件類型的名稱。
@@ -100,17 +106,17 @@ const 是日期 = (obj) => 取得類型(obj) === TypeNames.Date;
 const 是空字串 = (obj) => 取得類型(obj) === TypeNames.String && obj.length === 0;
 
 /**
- * 判斷物件是否為函數類型。
+ * 判斷物件是否為函式類型。
  *
  * @param {*} obj - 要檢測的物件。
- * @returns {boolean} 如果物件是函數類型，則返回 `true`；否則返回 `false`。
+ * @returns {boolean} 如果物件是函式類型，則返回 `true`；否則返回 `false`。
  *
  * @example
- * 是函數(() => {}); // true
- * 是函數(function test() {}); // true
- * 是函數(123); // false
+ * 是函式(() => {}); // true
+ * 是函式(function test() {}); // true
+ * 是函式(123); // false
  */
-const 是函數 = (obj) => 取得類型(obj) === TypeNames.Function;
+const 是函式 = (obj) => 取得類型(obj) === TypeNames.Function;
 
 /**
  * 判斷物件是否不是陣列類型。
@@ -162,16 +168,16 @@ const 不是日期 = (obj) => 取得類型(obj) !== TypeNames.Date;
 const 不是空字串 = (obj) => 取得類型(obj) === TypeNames.String && obj.length > 0;
 
 /**
- * 判斷物件是否不是函數類型。
+ * 判斷物件是否不是函式類型。
  *
  * @param {*} obj - 要檢測的物件。
- * @returns {boolean} 如果物件不是函數類型，則返回 `true`；否則返回 `false`。
+ * @returns {boolean} 如果物件不是函式類型，則返回 `true`；否則返回 `false`。
  *
  * @example
- * 不是函數(123); // true
- * 不是函數(() => {}); // false
+ * 不是函式(123); // true
+ * 不是函式(() => {}); // false
  */
-const 不是函數 = (obj) => 取得類型(obj) !== TypeNames.Function;
+const 不是函式 = (obj) => 取得類型(obj) !== TypeNames.Function;
 
 /**
  * 判斷物件是否不是 `null`。
@@ -369,7 +375,7 @@ const 是null或空字串 = (obj) => {
 
 /**
  * 比較兩個值是否為相同的資料型別。
- * 此函數會對輸入值的 '型別' 進行檢查，而非僅檢查是否相等。
+ * 此函式會對輸入值的 '型別' 進行檢查，而非僅檢查是否相等。
  * 使用 `Object.prototype.toString.call()` 以確保型別判斷準確，避免 `typeof` 無法正確判斷物件或陣列的問題。
  *
  * @function 相同類型
@@ -427,10 +433,10 @@ const 複製物件 = (object) => {
 };
 
 /**
- * 獲取物件及其原型鏈中所有非構造函數的函數名稱列表。
+ * 獲取物件及其原型鏈中所有非構造函式的函式名稱列表。
  *
  * @param {Object} obj - 傳入的物件。
- * @returns {string[]} 包含所有函數名稱的陣列 (不重複)。
+ * @returns {string[]} 包含所有函式名稱的陣列 (不重複)。
  */
 const 取得方法 = (obj) => {
 	if (obj === null || typeof obj !== 'object') {
@@ -451,14 +457,14 @@ const 取得方法 = (obj) => {
 };
 
 /**
- * 提取函數的參數名稱列表。
+ * 提取函式的參數名稱列表。
  *
- * @param {Function} func - 要提取參數名稱的函數。
+ * @param {Function} func - 要提取參數名稱的函式。
  * @returns {string[]} 包含參數名稱的陣列；若輸入無效或無參數則返回空陣列。
  */
 const 取得參數名稱 = (func) => {
 	if (typeof func !== 'function') {
-		throw new TypeError('參數必須是一個函數');
+		throw new TypeError('參數必須是一個函式');
 	}
 
 	const fnStr = func.toString().replace(/\s+/g, ' '); // 移除不必要的多餘空白
@@ -497,6 +503,86 @@ const 移除代理 = (obj) => {
 	}
 };
 
+/**
+ * 修正精確度誤差，移除小數點後多餘的零並精確到指定的小數位數。
+ *
+ * @param {number} x - 要修正的數值。
+ * @param {number} [精確度=10] - 指定修正的小數位數範圍，預設為 10。
+ * @returns {number} 返回修正後的數值。
+ *
+ * @example
+ * // 修正後的小數結果
+ * 修正精確度誤差(1.2300000000); // 1.23
+ * 修正精確度誤差(0.0000001, 7); // 0.0000001
+ * 修正精確度誤差(1.01111111, 4); // 1.0111
+ */
+const 修正精確度誤差 = (x, 精確度 = 10) => parseFloat(x.toFixed(精確度).toString());
+
+/**
+ * 判斷數值是否為很小的值（小於容差範圍）。
+ *
+ * 此函式用於檢查數值的絕對值是否小於指定的容差值 (`TOLERANCE`)，
+ * 通常用於判斷數值是否接近於零。
+ *
+ * @param {number} x - 要檢查的數值。
+ * @returns {boolean} 如果數值的絕對值小於 `TOLERANCE`，返回 `true`；否則返回 `false`。
+ *
+ * @example
+ * // 範例 1：很小的值
+ * const 是小值 = 是很小的值(0.0001); // true (當 TOLERANCE 為預設值，例如 0.001)
+ *
+ * @example
+ * // 範例 2：不是很小的值
+ * const 不是小值 = 是很小的值(0.01); // false
+ */
+const 是很小的值 = (x) => Math.abs(x) < TOLERANCE;
+
+/**
+ * 驗證兩個數值是否相等（在允許的誤差範圍內）。
+ *
+ * 該函式使用給定的容差值 (`TOLERANCE`) 來檢查兩個數值之間的差異是否小於或等於容差，
+ * 如果是，則認為它們相等。
+ *
+ * @param {number} a - 第一個數值。
+ * @param {number} b - 第二個數值。
+ * @returns {boolean} 如果兩個數值在允許的容差範圍內相等，返回 `true`；否則返回 `false`。
+ *
+ * @example
+ * // 範例 1：兩數相等
+ * const 相等 = 兩個數值相等(0.1 + 0.2, 0.3); // true (考慮浮點數舍入誤差)
+ *
+ * @example
+ * // 範例 2：兩數不相等
+ * const 不相等 = 兩個數值相等(0.1, 0.2); // false
+ */
+
+const 兩個數值相等 = (a, b) => Math.abs(a - b) <= TOLERANCE;
+/**
+ * 驗證輸入是否為函式。
+ *
+ * 該函式會檢查輸入是否為有效的函式，若輸入不是函式，則拋出 `型別錯誤`。
+ *
+ * @param {Function} 函式 - 要驗證的目標值。
+ * @throws {型別錯誤} 如果輸入既存在且不是函式時，拋出型別錯誤。
+ *
+ * @example
+ * // 範例 1：正確的函式
+ * 必須是函式(() => console.log('這是一個函式')); // 不會拋出錯誤
+ *
+ * @example
+ * // 範例 2：錯誤的非函式輸入
+ * 必須是函式(123); // 拋出型別錯誤
+ *
+ * @example
+ * // 範例 3：無輸入（允許不傳值）
+ * 必須是函式(); // 不會拋出錯誤
+ */
+const 必須是函式 = (函式) => {
+	if (函式 && 不是函式(函式)) {
+		throw new 型別錯誤(錯誤訊息.必須是函式);
+	}
+};
+
 module.exports = {
 	複製物件,
 	取得類型,
@@ -504,12 +590,12 @@ module.exports = {
 	是布林值,
 	是日期,
 	是空字串,
-	是函數,
+	是函式,
 	不是陣列,
 	不是布林值,
 	不是日期,
 	不是空字串,
-	不是函數,
+	不是函式,
 	不是null,
 	不是數字,
 	不是物件,
@@ -529,6 +615,10 @@ module.exports = {
 	取得方法,
 	取得參數名稱,
 	移除代理,
+	是很小的值,
+	修正精確度誤差,
+	兩個數值相等,
+	必須是函式,
 	ARRAY: TypeNames.Array,
 	BOOLEAN: TypeNames.Boolean,
 	DATE: TypeNames.Date,

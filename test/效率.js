@@ -11,9 +11,9 @@ function 產生亂數 (min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function 計算函數執行時間 (函數, 標籤) {
+function 計算函式執行時間 (函式, 標籤) {
 	console.time(標籤);
-	函數();
+	函式();
 	console.timeEnd(標籤);
 }
 
@@ -70,16 +70,16 @@ function 測試複製_使用slice () {
 }
 
 初始化測試陣列();
-計算函數執行時間(測試搜尋數值_使用for迴圈, '測試 搜尋數值_使用for迴圈');
-計算函數執行時間(測試搜尋數值_使用indexOf, '測試 搜尋數值_使用indexOf');
+計算函式執行時間(測試搜尋數值_使用for迴圈, '測試 搜尋數值_使用for迴圈');
+計算函式執行時間(測試搜尋數值_使用indexOf, '測試 搜尋數值_使用indexOf');
 
-計算函數執行時間(測試filter_使用for迴圈, '測試 filter_使用for迴圈');
-計算函數執行時間(測試filter_使用filter, '測試 filter_使用filter');
+計算函式執行時間(測試filter_使用for迴圈, '測試 filter_使用for迴圈');
+計算函式執行時間(測試filter_使用filter, '測試 filter_使用filter');
 
-計算函數執行時間(測試複製_使用for迴圈, '測試 複製_使用for迴圈');
-計算函數執行時間(測試複製_使用from, '測試 複製_使用from');
-計算函數執行時間(測試複製_使用push, '測試 複製_使用push');
-計算函數執行時間(測試複製_使用slice, '測試 複製_使用slice');
+計算函式執行時間(測試複製_使用for迴圈, '測試 複製_使用for迴圈');
+計算函式執行時間(測試複製_使用from, '測試 複製_使用from');
+計算函式執行時間(測試複製_使用push, '測試 複製_使用push');
+計算函式執行時間(測試複製_使用slice, '測試 複製_使用slice');
 
 /*
 測試搜尋數值_使用for迴圈: 2.682ms
