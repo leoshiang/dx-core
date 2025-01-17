@@ -34,7 +34,7 @@ const path = require('path');
  * - 提供的路徑不存在。
  * - 無法訪問指定的目錄（權限不足）。
  */
-function 列出目錄下所有檔案(起始路徑, 檔案陣列 = []) {
+function 列出目錄下所有檔案 (起始路徑, 檔案陣列 = []) {
 	const files = fs.readdirSync(起始路徑); // 讀取目錄內容
 
 	files.forEach((file) => {

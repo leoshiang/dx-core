@@ -29,7 +29,7 @@ const fetch = require('sync-fetch');
  * - 若 `token` 不正確或無效，請求將失敗。
  * - 若機器人未加入到指定的聊天，或者無權限，請求亦會失敗。
  */
-function 傳送Telegram訊息(token, chatId, message) {
+function 傳送Telegram訊息 (token, chatId, message) {
 	const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
 	fetch(url);
 }
