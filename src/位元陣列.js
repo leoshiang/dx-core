@@ -52,7 +52,7 @@ module.exports = class 位元陣列 {
 		'1000', '1001', '1010', '1011', '1100', '1101', '1110', '1111'];
 	/**
 	 * @private
-	 * @property {number} #一頁可紀錄的位元數
+	 * @property {number} #一頁可記錄的位元數
 	 * 每頁能夠記錄的最大位元數量，默認為 24 位元。
 	 *
 	 * @description
@@ -60,7 +60,7 @@ module.exports = class 位元陣列 {
 	 * - 初始化默認值為固定值 24。
 	 * - 此值影響所有與分頁相關的操作。
 	 */
-	#一頁可紀錄的位元數 = 24;
+	#一頁可記錄的位元數 = 24;
 	/**
 	 * @private
 	 * @property {number} #數量
@@ -80,7 +80,7 @@ module.exports = class 位元陣列 {
 	 *
 	 * @description
 	 * 此私有屬性為一個陣列，用於拆分和存放每頁的位元資訊。
-	 * - 依照 `#一頁可紀錄的位元數` 進行分頁管理，超出限制時自動擴展。
+	 * - 依照 `#一頁可記錄的位元數` 進行分頁管理，超出限制時自動擴展。
 	 * - 初始值為空陣列，表示尚未有任何頁面的位元記錄。
 	 *
 	 * @example
@@ -190,7 +190,7 @@ module.exports = class 位元陣列 {
 	 * @returns {number} - 該位元編號對應的頁面編號，從 0 開始。
 	 *
 	 * @description
-	 * 此方法根據每頁可記錄的位元數 (`this.#一頁可紀錄的位元數`)，透過公式計算指定位元編號所屬的頁面編號：
+	 * 此方法根據每頁可記錄的位元數 (`this.#一頁可記錄的位元數`)，透過公式計算指定位元編號所屬的頁面編號：
 	 * `Math.floor(位元編號 / 每頁可紀錄位元數)`。
 	 *
 	 * - 頁面編號從 0 開始，對應的是位元的歸屬位置。
@@ -213,7 +213,7 @@ module.exports = class 位元陣列 {
 	 * console.log(page3); // 輸出: 2
 	 */
 	#取得頁面編號 (位元編號) {
-		return Math.floor(位元編號 / this.#一頁可紀錄的位元數);
+		return Math.floor(位元編號 / this.#一頁可記錄的位元數);
 	}
 
 	/**
@@ -381,7 +381,7 @@ module.exports = class 位元陣列 {
 	 * console.log(pages); // 輸出: 0
 	 */
 	#計算需要的頁面數量 (位元數量) {
-		return Math.floor((位元數量 + this.#一頁可紀錄的位元數 - 1) / this.#一頁可紀錄的位元數);
+		return Math.floor((位元數量 + this.#一頁可記錄的位元數 - 1) / this.#一頁可記錄的位元數);
 	}
 
 	/**
@@ -547,7 +547,7 @@ module.exports = class 位元陣列 {
 
 		// 計算頁面索引與位元遮罩
 		const 頁面索引 = this.#取得頁面編號(位元編號);
-		const 位元遮罩 = 1 << (位元編號 % this.#一頁可紀錄的位元數);
+		const 位元遮罩 = 1 << (位元編號 % this.#一頁可記錄的位元數);
 
 		// 取得該位元的狀態並返回結果
 		return (this.#頁面[頁面索引] & 位元遮罩) !== 0;
@@ -587,14 +587,14 @@ module.exports = class 位元陣列 {
 		const 移除空白之後的二進位字串 = 字串工具.移除空白字元(二進位字串);
 		this.#確保二進位字串只有0和1的字元(移除空白之後的二進位字串);
 		let 結束位置 = 移除空白之後的二進位字串.length;
-		let 起始位置 = 結束位置 - Math.min(this.#一頁可紀錄的位元數, 移除空白之後的二進位字串.length);
+		let 起始位置 = 結束位置 - Math.min(this.#一頁可記錄的位元數, 移除空白之後的二進位字串.length);
 		this.#設定位元數量(移除空白之後的二進位字串.length);
 		let 頁面編號 = 0;
 		while (頁面編號 < this.#頁面.length) {
 			let part = 移除空白之後的二進位字串.substring(起始位置, 結束位置);
 			this.#頁面[頁面編號] = parseInt(part, 2);
-			結束位置 -= this.#一頁可紀錄的位元數;
-			起始位置 -= this.#一頁可紀錄的位元數;
+			結束位置 -= this.#一頁可記錄的位元數;
+			起始位置 -= this.#一頁可記錄的位元數;
 			頁面編號++;
 		}
 		return this;
@@ -637,7 +637,7 @@ module.exports = class 位元陣列 {
 
 		// 計算分頁編號與對應的位元遮罩
 		const 分頁編號 = this.#取得頁面編號(位元編號);
-		const 位元遮罩 = 1 << (位元編號 % this.#一頁可紀錄的位元數);
+		const 位元遮罩 = 1 << (位元編號 % this.#一頁可記錄的位元數);
 
 		// 根據狀態設置位元的值
 		this.#頁面[分頁編號] = 狀態
@@ -657,7 +657,7 @@ module.exports = class 位元陣列 {
 	 * console.log(位元陣列.轉為二進位字串());
 	 */
 	轉為二進位字串 () {
-		const 四位元組的數量 = this.#一頁可紀錄的位元數 / 4;
+		const 四位元組的數量 = this.#一頁可記錄的位元數 / 4;
 		const 結果 = this.#頁面.flatMap(x =>
 			Array.from({ length: 四位元組的數量 }, (_, i) =>
 				位元陣列.四位元組[(x >> (i * 4)) & 0x0000000F]
