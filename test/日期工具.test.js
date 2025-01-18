@@ -1,4 +1,4 @@
-const 日期工具 = require('../src/日期工具.js');
+import 日期工具 from '../src/日期工具.js';
 
 describe('日期工具.加上', () => {
 	let dateModule;

@@ -1,7 +1,7 @@
-const 向量 = require('./向量');
-const { 型別錯誤, 索引超出範圍錯誤 } = require('./例外');
-const 型別 = require('./型別');
-const 錯誤訊息 = require('./錯誤訊息');
+import 向量 from './向量.js';
+import { 型別錯誤, 索引超出範圍錯誤 } from './例外.js';
+import 型別 from './型別.js';
+import 錯誤訊息 from './錯誤訊息.js';
 
 /**
  * 此 callback 會在遍歷每一個 直行 時被呼叫一次。
@@ -85,7 +85,7 @@ const 錯誤訊息 = require('./錯誤訊息');
  * //   [2, 4, 6]
  * // ]
  */
-module.exports = class 矩陣 extends Array {
+export default class 矩陣 extends Array {
 
 	#橫列數量;
 	#直行數量;

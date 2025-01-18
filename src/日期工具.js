@@ -613,4 +613,4 @@ class 日期工具 {
 
 const instance = new 日期工具();
 
-module.exports = instance;
+export default instance;

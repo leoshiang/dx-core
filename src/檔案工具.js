@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 /**
  * 列出指定目錄及其子目錄中的所有檔案路徑。
@@ -53,8 +53,6 @@ function 列出目錄下所有檔案 (起始路徑, 檔案陣列 = []) {
 	return 檔案陣列;
 }
 
-module.exports = 列出目錄下所有檔案;
-
-module.exports = {
+export default {
 	列出目錄下所有檔案
 };

@@ -1,4 +1,4 @@
-const fetch = require('sync-fetch');
+import fetch from 'sync-fetch';
 
 /**
  * 傳送訊息至指定的 Telegram 聊天。
@@ -34,6 +34,6 @@ function 傳送Telegram訊息 (token, chatId, message) {
 	fetch(url);
 }
 
-module.exports = {
+export default {
 	傳送Telegram訊息
 };

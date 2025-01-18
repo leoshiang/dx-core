@@ -1,10 +1,7 @@
-const 向量 = require('../src/向量');
-const 位元陣列 = require('../src/位元陣列');
-const {
-	型別錯誤,
-	參數錯誤,
-} = require('../src/例外');
-const 錯誤訊息 = require('../src/錯誤訊息');
+import 向量 from '../src/向量.js';
+import 位元陣列 from '../src/位元陣列.js';
+import { 型別錯誤, 參數錯誤 } from '../src/例外.js';
+import 錯誤訊息 from '../src/錯誤訊息.js';
 
 describe('測試【constructor】', () => {
 	it('傳入大於等於零的數字，length 應等於該數字', () => {

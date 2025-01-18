@@ -583,7 +583,7 @@ const 必須是函式 = (函式) => {
 	}
 };
 
-module.exports = {
+export default {
 	複製物件,
 	取得類型,
 	是陣列,

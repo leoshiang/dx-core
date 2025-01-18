@@ -1,4 +1,4 @@
-const fetch = require('sync-fetch');
+import fetch from 'sync-fetch';
 
 /**
  * 將地址轉換為地理座標。
@@ -51,6 +51,6 @@ function 地址轉座標 (addresses) {
 	return output;
 }
 
-module.exports = {
+export default {
 	地址轉座標
 };

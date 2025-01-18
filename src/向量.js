@@ -1,7 +1,7 @@
-const 型別 = require('./型別');
-const { 型別錯誤, 參數錯誤, } = require('./例外');
-const 位元陣列 = require('./位元陣列');
-const 錯誤訊息 = require('./錯誤訊息');
+import 型別 from './型別.js';
+import { 參數錯誤, 型別錯誤 } from './例外.js';
+import 位元陣列 from './位元陣列.js';
+import 錯誤訊息 from './錯誤訊息.js';
 
 /**
  * 回呼函式
@@ -44,7 +44,7 @@ const 錯誤訊息 = require('./錯誤訊息');
  * const vector4 = new 向量(3, 4);
  * console.log(vector4.長度()); // 返回: 5 (向量模長)
  */
-module.exports = class 向量 extends Array {
+export default class 向量 extends Array {
 
 	/**
 	 * 向量類別的建構函式。
@@ -894,4 +894,4 @@ module.exports = class 向量 extends Array {
 
 		return 新向量;
 	}
-};
+}

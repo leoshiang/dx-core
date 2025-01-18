@@ -1,6 +1,6 @@
-const 矩陣 = require('../src/矩陣');
-const { 型別錯誤, 索引超出範圍錯誤 } = require('../src/例外');
-const 錯誤訊息 = require('../src/錯誤訊息');
+import 矩陣 from '../src/矩陣.js';
+import { 型別錯誤, 索引超出範圍錯誤 } from '../src/例外.js';
+import 錯誤訊息 from '../src/錯誤訊息.js';
 
 describe('測試【constructor】', () => {
 	it('沒指定初始的rows與columns，rows與columns應為0', () => {

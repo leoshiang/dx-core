@@ -1,5 +1,5 @@
-const 字串工具 = require('../src/字串工具');
-const 錯誤訊息 = require('../src/錯誤訊息');
+import 字串工具 from '../src/字串工具';
+import 錯誤訊息 from '../src/錯誤訊息';
 
 describe('測試【重複】', function () {
 	it('沒有傳入參數，應回傳 undefined', () => {

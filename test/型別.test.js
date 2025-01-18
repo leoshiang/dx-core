@@ -1,4 +1,4 @@
-const Type = require('../src/型別.js');
+import Type from '../src/型別.js';
 
 describe('Type.取得類型', () => {
 	it('應該返回 "Array" 當輸入為陣列', () => {

@@ -1,6 +1,6 @@
 /** @module 字串工具 **/
 
-const 錯誤訊息 = require('./錯誤訊息');
+import 錯誤訊息 from './錯誤訊息.js';
 
 function 格式化 (模板) {
 	if (arguments.length < 2) {
@@ -64,7 +64,7 @@ const 移除空白字元 = (字串 = '') => {
 	return 字串.replace(/\s/g, '');
 };
 
-module.exports = {
+export default {
 	格式化,
 	重複,
 	詞彙是否同時出現在句子中,

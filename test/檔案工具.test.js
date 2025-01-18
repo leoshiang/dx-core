@@ -1,6 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const 檔案工具 = require('../src/檔案工具.js');
+import fs from 'fs';
+import path from 'path';
+import 檔案工具 from '../src/檔案工具.js';
 
 jest.mock('fs'); // 使用 Jest 模擬 fs 模組
 jest.mock('path'); // 使用 Jest 模擬 path 模組

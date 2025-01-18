@@ -1,4 +1,4 @@
-const 位元陣列 = require('../src/位元陣列');
+import 位元陣列 from '../src/位元陣列';
 const {
 	型別錯誤, 參數錯誤, 索引超出範圍錯誤, 二進位字串內容錯誤,
 } = require('../src/例外');

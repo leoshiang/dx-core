@@ -2,9 +2,10 @@
 
 /**
  * @class
+ * 索引超出範圍錯誤
  */
-class 索引超出範圍錯誤 extends Error {
-	constructor (message) {
+export class 索引超出範圍錯誤 extends Error {
+	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
 		Error.captureStackTrace(this, this.constructor);
@@ -13,9 +14,10 @@ class 索引超出範圍錯誤 extends Error {
 
 /**
  * @class
+ * 參數錯誤
  */
-class 參數錯誤 extends Error {
-	constructor (message) {
+export class 參數錯誤 extends Error {
+	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
 		Error.captureStackTrace(this, this.constructor);
@@ -24,9 +26,10 @@ class 參數錯誤 extends Error {
 
 /**
  * @class
+ * 型別錯誤
  */
-class 型別錯誤 extends Error {
-	constructor (message) {
+export class 型別錯誤 extends Error {
+	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
 		Error.captureStackTrace(this, this.constructor);
@@ -35,18 +38,19 @@ class 型別錯誤 extends Error {
 
 /**
  * @class
+ * 二進位字串內容錯誤
  */
-class 二進位字串內容錯誤 extends Error {
-	constructor (message) {
+export class 二進位字串內容錯誤 extends Error {
+	constructor(message) {
 		super(message);
 		this.name = this.constructor.name;
 		Error.captureStackTrace(this, this.constructor);
 	}
 }
 
-module.exports = {
+export default {
 	索引超出範圍錯誤,
-	型別錯誤,
 	參數錯誤,
-	二進位字串內容錯誤,
-};
+	型別錯誤,
+	二進位字串內容錯誤
+}

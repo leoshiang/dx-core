@@ -1,4 +1,4 @@
-const 地理資訊系統 = require('../src/地理資訊系統');
+import 地理資訊系統 from '../src/地理資訊系統';
 
 describe('測試【地址轉座標】',  () => {
 	it('將兩個地址轉成座標，應能轉換成功。', async () => {
