@@ -21,12 +21,12 @@ import 錯誤訊息 from './錯誤訊息.js';
  * 支援所有 Array 的方法，並可進一步擴展向量的操作能力。
  *
  * @example
- * // 範例 1: 創建一個空的向量
+ * // 範例 1: 建立一個空的向量
  * const vector1 = new 向量();
  * console.log(vector1); // 輸出: []
  *
  * @example
- * // 範例 2: 創建一個具有初始值的向量
+ * // 範例 2: 建立一個具有初始值的向量
  * const vector2 = new 向量(1, 2, 3);
  * console.log(vector2); // 輸出: [1, 2, 3]
  *

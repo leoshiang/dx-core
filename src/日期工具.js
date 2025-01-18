@@ -17,7 +17,7 @@ const UnitNames = Object.getOwnPropertyNames(Units).map(x => Units[x]);
  *
  * @class 日期工具
  * @example
- * // 創建日期工具的實例
+ * // 建立日期工具的實例
  * const 工具 = new 日期工具();
  *
  * // 使用格式化方法
@@ -495,7 +495,7 @@ class 日期工具 {
 			throw new Error(`不支援的單位: ${單位}`);
 		}
 
-		// 創建一個新 Date 防止直接修改輸入的日期
+		// 建立一個新 Date 防止直接修改輸入的日期
 		const newDate = new Date(日期);
 
 		// 執行對應的減法
