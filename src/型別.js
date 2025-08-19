@@ -21,16 +21,16 @@ let TOLERANCE = 1.0E-8; // Number.EPSILON = 1.0E-150
  * @property {string} Undefined - 表示未定義類型的名稱。
  */
 const TypeNames = {
-	Array: 'Array',
-	Boolean: 'Boolean',
-	Date: 'Date',
-	Function: 'Function',
-	Null: 'Null',
-	Number: 'Number',
-	Object: 'Object',
-	RegExp: 'RegExp',
-	String: 'String',
-	Undefined: 'Undefined',
+    Array: 'Array',
+    Boolean: 'Boolean',
+    Date: 'Date',
+    Function: 'Function',
+    Null: 'Null',
+    Number: 'Number',
+    Object: 'Object',
+    RegExp: 'RegExp',
+    String: 'String',
+    Undefined: 'Undefined',
 };
 
 /**
@@ -364,13 +364,13 @@ const 是null或未定義 = (obj) => 取得類型(obj) === TypeNames.Undefined |
  * 是null或空字串(123); // false
  */
 const 是null或空字串 = (obj) => {
-	if (是null(obj) || 是未定義(obj)) {
-		return true;
-	}
-	if (取得類型(obj) !== TypeNames.String) {
-		return false;
-	}
-	return obj.length === 0;
+    if (是null(obj) || 是未定義(obj)) {
+        return true;
+    }
+    if (取得類型(obj) !== TypeNames.String) {
+        return false;
+    }
+    return obj.length === 0;
 };
 
 /**
@@ -396,16 +396,16 @@ const 是null或空字串 = (obj) => {
  * 相同類型(undefined, null); // false，並顯示警告
  */
 const 相同類型 = (obj1, obj2) => {
-	if (obj1 === undefined || obj2 === undefined) {
-		console.warn('其中一個或多個輸入為 undefined');
-		return false;
-	}
+    if (obj1 === undefined || obj2 === undefined) {
+        console.warn('其中一個或多個輸入為 undefined');
+        return false;
+    }
 
-	if (obj1 === null && obj2 === null) {
-		return true; // 都為 null 時型別相同
-	}
+    if (obj1 === null && obj2 === null) {
+        return true; // 都為 null 時型別相同
+    }
 
-	return 取得類型(obj1) === 取得類型(obj2);
+    return 取得類型(obj1) === 取得類型(obj2);
 };
 
 /**
@@ -420,16 +420,16 @@ const 相同類型 = (obj1, obj2) => {
  * console.log(copy); // { a: 1, b: { c: 2 } }
  */
 const 複製物件 = (object) => {
-	if (object === undefined || object === null || typeof object !== 'object') {
-		return object; // 如果不是物件或為 null，直接返回原來的值
-	}
+    if (object === undefined || object === null || typeof object !== 'object') {
+        return object; // 如果不是物件或為 null，直接返回原來的值
+    }
 
-	try {
-		return JSON.parse(JSON.stringify(object));
-	} catch (error) {
-		console.error('無法拷貝物件:', error);
-		return null; // 如果拷貝過程失敗，返回 null 作為默認值
-	}
+    try {
+        return JSON.parse(JSON.stringify(object));
+    } catch (error) {
+        console.error('無法拷貝物件:', error);
+        return null; // 如果拷貝過程失敗，返回 null 作為默認值
+    }
 };
 
 /**
@@ -439,21 +439,21 @@ const 複製物件 = (object) => {
  * @returns {string[]} 包含所有函式名稱的陣列 (不重複)。
  */
 const 取得方法 = (obj) => {
-	if (obj === null || typeof obj !== 'object') {
-		throw new TypeError('參數必須是一個物件');
-	}
+    if (obj === null || typeof obj !== 'object') {
+        throw new TypeError('參數必須是一個物件');
+    }
 
-	const methods = new Set();
-	let proto = Object.getPrototypeOf(obj);
+    const methods = new Set();
+    let proto = Object.getPrototypeOf(obj);
 
-	while (proto && proto !== Object.prototype) {
-		Object.getOwnPropertyNames(proto)
-			.filter(name => typeof proto[name] === 'function' && name !== 'constructor')
-			.forEach(name => methods.add(name));
-		proto = Object.getPrototypeOf(proto);
-	}
+    while (proto && proto !== Object.prototype) {
+        Object.getOwnPropertyNames(proto)
+              .filter(name => typeof proto[name] === 'function' && name !== 'constructor')
+              .forEach(name => methods.add(name));
+        proto = Object.getPrototypeOf(proto);
+    }
 
-	return [...methods];
+    return [...methods];
 };
 
 /**
@@ -463,20 +463,18 @@ const 取得方法 = (obj) => {
  * @returns {string[]} 包含參數名稱的陣列；若輸入無效或無參數則返回空陣列。
  */
 const 取得參數名稱 = (func) => {
-	if (typeof func !== 'function') {
-		throw new TypeError('參數必須是一個函式');
-	}
+    if (typeof func !== 'function') {
+        throw new TypeError('參數必須是一個函式');
+    }
 
-	const fnStr = func.toString().replace(/\s+/g, ' '); // 移除不必要的多餘空白
-	const match = fnStr.match(/^[^(]*\(([^)]*)\)/); // 提取參數部分
-	if (!match || !match[1]) {
-		return [];
-	}
+    const fnStr = func.toString().replace(/\s+/g, ' '); // 移除不必要的多餘空白
+    const match = fnStr.match(/^[^(]*\(([^)]*)\)/); // 提取參數部分
+    if (!match || !match[1]) {
+        return [];
+    }
 
-	return match[1]
-		.split(',')
-		.map(param => param.trim()) // 去除多餘空白
-		.filter(param => param);   // 過濾空值
+    return match[1].split(',').map(param => param.trim()) // 去除多餘空白
+                   .filter(param => param);   // 過濾空值
 };
 
 /**
@@ -486,21 +484,21 @@ const 取得參數名稱 = (func) => {
  * @returns {*} 返回新的深拷貝物件；null 和 undefined 將直接返回。
  */
 const 移除代理 = (obj) => {
-	if (obj === null || obj === undefined) {
-		return obj; // 無需處理 null 或 undefined
-	}
+    if (obj === null || obj === undefined) {
+        return obj; // 無需處理 null 或 undefined
+    }
 
-	if (typeof obj !== 'object') {
-		return obj; // 非物件類型直接返回（例如數字、字串、布林值）
-	}
+    if (typeof obj !== 'object') {
+        return obj; // 非物件類型直接返回（例如數字、字串、布林值）
+    }
 
-	// 使用 JSON 方法進行深拷貝
-	try {
-		return JSON.parse(JSON.stringify(obj));
-	} catch (error) {
-		// 當無法序列化物件時拋出錯誤（例如循環引用會導致問題）
-		throw new Error(`無法移除 Proxy，解析失敗: ${error.message}`);
-	}
+    // 使用 JSON 方法進行深拷貝
+    try {
+        return JSON.parse(JSON.stringify(obj));
+    } catch (error) {
+        // 當無法序列化物件時拋出錯誤（例如循環引用會導致問題）
+        throw new Error(`無法移除 Proxy，解析失敗: ${error.message}`);
+    }
 };
 
 /**
@@ -578,55 +576,55 @@ const 兩個數值相等 = (a, b) => Math.abs(a - b) <= TOLERANCE;
  * 必須是函式(); // 不會拋出錯誤
  */
 const 必須是函式 = (函式) => {
-	if (函式 && 不是函式(函式)) {
-		throw new 型別錯誤(錯誤訊息.必須是函式);
-	}
+    if (函式 && 不是函式(函式)) {
+        throw new 型別錯誤(錯誤訊息.必須是函式);
+    }
 };
 
 export default {
-	複製物件,
-	取得類型,
-	是陣列,
-	是布林值,
-	是日期,
-	是空字串,
-	是函式,
-	不是陣列,
-	不是布林值,
-	不是日期,
-	不是空字串,
-	不是函式,
-	不是null,
-	不是數字,
-	不是物件,
-	不是正則表達式,
-	不是字串,
-	不是未定義,
-	是null,
-	是null或空字串,
-	是null或未定義,
-	是數字,
-	是物件,
-	是正則表達式,
-	是字串,
-	是UUID,
-	是未定義,
-	相同類型,
-	取得方法,
-	取得參數名稱,
-	移除代理,
-	是很小的值,
-	修正精確度誤差,
-	兩個數值相等,
-	必須是函式,
-	ARRAY: TypeNames.Array,
-	BOOLEAN: TypeNames.Boolean,
-	DATE: TypeNames.Date,
-	FUNCTION: TypeNames.Function,
-	NULL: TypeNames.Null,
-	NUMBER: TypeNames.Number,
-	OBJECT: TypeNames.Object,
-	REGEXP: TypeNames.RegExp,
-	STRING: TypeNames.String,
-	UNDEFINED: TypeNames.Undefined,
+    複製物件,
+    取得類型,
+    是陣列,
+    是布林值,
+    是日期,
+    是空字串,
+    是函式,
+    不是陣列,
+    不是布林值,
+    不是日期,
+    不是空字串,
+    不是函式,
+    不是null,
+    不是數字,
+    不是物件,
+    不是正則表達式,
+    不是字串,
+    不是未定義,
+    是null,
+    是null或空字串,
+    是null或未定義,
+    是數字,
+    是物件,
+    是正則表達式,
+    是字串,
+    是UUID,
+    是未定義,
+    相同類型,
+    取得方法,
+    取得參數名稱,
+    移除代理,
+    是很小的值,
+    修正精確度誤差,
+    兩個數值相等,
+    必須是函式,
+    ARRAY: TypeNames.Array,
+    BOOLEAN: TypeNames.Boolean,
+    DATE: TypeNames.Date,
+    FUNCTION: TypeNames.Function,
+    NULL: TypeNames.Null,
+    NUMBER: TypeNames.Number,
+    OBJECT: TypeNames.Object,
+    REGEXP: TypeNames.RegExp,
+    STRING: TypeNames.String,
+    UNDEFINED: TypeNames.Undefined,
 };

@@ -35,22 +35,22 @@ import fetch from 'sync-fetch';
  *
  * @throws {Error} 若 `addresses` 不是陣列，或陣列中包含非字串的元素，可能導致函式行為異常。
  */
-function 地址轉座標 (addresses) {
-	const output = [];
-	for (let i = 0, l = addresses.length; i < l; i++) {
-		const address = addresses[i];
-		const url = (new URL('https://www.google.com.tw/maps/place/' + address)).toString();
-		const data = fetch(url).text();
-		const reg = /@(\d+\.\d+),(\d+\.\d+)/g;
-		const match = reg.exec(data);
-		if (match) {
-			output.push(`${address},${match[1]},${match[2]}`);
-		}
-	}
+function 地址轉座標(addresses) {
+    const output = [];
+    for (let i = 0, l = addresses.length; i < l; i++) {
+        const address = addresses[i];
+        const url = (new URL('https://www.google.com.tw/maps/place/' + address)).toString();
+        const data = fetch(url).text();
+        const reg = /@(\d+\.\d+),(\d+\.\d+)/g;
+        const match = reg.exec(data);
+        if (match) {
+            output.push(`${address},${match[1]},${match[2]}`);
+        }
+    }
 
-	return output;
+    return output;
 }
 
 export default {
-	地址轉座標
+    地址轉座標,
 };

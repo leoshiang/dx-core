@@ -1,20 +1,19 @@
 {
   "name": "dx-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./lib/index.bundle.js",
   "description": "",
   "author": "Leo Shiang <leoshiang@gmail.com>",
-  "homepage": "https://github.com/leoshiang/DXCore#readme",
+  "homepage": "https://github.com/leoshiang/dx-core#readme",
   "license": "MIT",
   "type": "module",
   "scripts": {
     "test": "jest",
-    "build": "webpack",
-    "generate-docs": "jsdoc --configure jsdoc.json --verbose"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leoshiang/DXCore.git"
+    "url": "https://github.com/leoshiang/dx-core.git"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

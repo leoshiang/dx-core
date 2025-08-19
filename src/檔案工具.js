@@ -34,25 +34,25 @@ import path from 'path';
  * - 提供的路徑不存在。
  * - 無法訪問指定的目錄（權限不足）。
  */
-function 列出目錄下所有檔案 (起始路徑, 檔案陣列 = []) {
-	const files = fs.readdirSync(起始路徑); // 讀取目錄內容
+function 列出目錄下所有檔案(起始路徑, 檔案陣列 = []) {
+    const files = fs.readdirSync(起始路徑); // 讀取目錄內容
 
-	files.forEach((file) => {
-		const fullPath = path.join(起始路徑, file); // 合成檔案的完整路徑
-		const stats = fs.statSync(fullPath); // 獲取檔案或目錄的狀態
+    files.forEach((file) => {
+        const fullPath = path.join(起始路徑, file); // 合成檔案的完整路徑
+        const stats = fs.statSync(fullPath); // 獲取檔案或目錄的狀態
 
-		if (stats.isDirectory()) {
-			// 若是目錄，進行遞迴操作
-			列出目錄下所有檔案(fullPath, 檔案陣列);
-		} else {
-			// 若是檔案，加入結果陣列
-			檔案陣列.push(fullPath);
-		}
-	});
+        if (stats.isDirectory()) {
+            // 若是目錄，進行遞迴操作
+            列出目錄下所有檔案(fullPath, 檔案陣列);
+        } else {
+            // 若是檔案，加入結果陣列
+            檔案陣列.push(fullPath);
+        }
+    });
 
-	return 檔案陣列;
+    return 檔案陣列;
 }
 
 export default {
-	列出目錄下所有檔案
+    列出目錄下所有檔案,
 };
