@@ -1,6 +1,6 @@
 {
   "name": "dx-core",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./lib/index.bundle.js",
   "description": "",
   "author": "Leo Shiang <leoshiang@gmail.com>",

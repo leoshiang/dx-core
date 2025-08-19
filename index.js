@@ -1,3 +1,4 @@
+// 使用動態 import 來支援按需載入
 import 位元陣列 from './src/位元陣列.js';
 import 例外 from './src/例外.js';
 import 向量 from './src/向量.js';
@@ -9,7 +10,22 @@ import 檔案工具 from './src/檔案工具.js';
 import 矩陣 from './src/矩陣.js';
 import 通訊軟體 from './src/通訊軟體.js';
 
-export default {
+// 使用 Object.freeze 防止意外修改
+const DXCore = Object.freeze({
+	位元陣列,
+	例外,
+	向量,
+	地理資訊系統,
+	型別,
+	字串工具,
+	日期工具,
+	檔案工具,
+	矩陣,
+	通訊軟體,
+});
+
+// 提供命名匯出和預設匯出
+export {
 	位元陣列,
 	例外,
 	向量,
@@ -21,3 +37,5 @@ export default {
 	矩陣,
 	通訊軟體,
 };
+
+export default DXCore;
